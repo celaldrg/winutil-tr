@@ -7,6 +7,7 @@ BeforeAll {
     . (Join-Path $script:repoRoot "functions\public\Invoke-WPFUpdatesdisable.ps1")
     . (Join-Path $script:repoRoot "functions\public\Invoke-WPFUpdatesdefault.ps1")
     . (Join-Path $script:repoRoot "functions\public\Invoke-WPFUpdatessecurity.ps1")
+    . (Join-Path $script:repoRoot "functions\private\Restore-WinUtilUpdateDll.ps1")
 
     function Write-WinUtilLog {
         param($Message, $Level, $Component)
@@ -39,6 +40,14 @@ BeforeAll {
             $Arguments
         )
     }
+    function takeown {
+        param($Option, $Target)
+        throw "takeown must be mocked: $Option $Target"
+    }
+    function icacls {
+        param($Target, $Operation, $Principal)
+        throw "icacls must be mocked: $Target $Operation $Principal"
+    }
 
     $script:updateTaskPaths = @(
         '\Microsoft\Windows\InstallService\*',
@@ -47,6 +56,21 @@ BeforeAll {
         '\Microsoft\Windows\WaaSMedic\*',
         '\Microsoft\Windows\WindowsUpdate\*',
         '\Microsoft\WindowsUpdate\*'
+    )
+
+    # The restore steps of WinUtil 25.09.05 to 25.12.18, in their original order
+    $system32Path = Join-Path $Env:SystemRoot "System32"
+    $script:updateDllRestoreCalls = @(
+        "takeown /f $system32Path\WaaSMedicSvc_BAK.dll",
+        "icacls $system32Path\WaaSMedicSvc_BAK.dll /grant *S-1-1-0:F",
+        "rename $system32Path\WaaSMedicSvc_BAK.dll WaaSMedicSvc.dll",
+        "icacls $system32Path\WaaSMedicSvc.dll /setowner NT SERVICE\TrustedInstaller",
+        "icacls $system32Path\WaaSMedicSvc.dll /remove *S-1-1-0",
+        "takeown /f $system32Path\wuaueng_BAK.dll",
+        "icacls $system32Path\wuaueng_BAK.dll /grant *S-1-1-0:F",
+        "rename $system32Path\wuaueng_BAK.dll wuaueng.dll",
+        "icacls $system32Path\wuaueng.dll /setowner NT SERVICE\TrustedInstaller",
+        "icacls $system32Path\wuaueng.dll /remove *S-1-1-0"
     )
 }
 
@@ -181,6 +205,22 @@ Describe "Invoke-WPFUpdatesdefault" {
         }
         Mock Enable-ScheduledTask { }
         Mock secedit { }
+        Mock Test-Path { $false }
+        $script:savedExitCode = $global:LASTEXITCODE
+        $script:dllCalls = [System.Collections.Generic.List[string]]::new()
+        Mock Rename-Item { $script:dllCalls.Add("rename $LiteralPath $NewName") }
+        Mock takeown {
+            $script:dllCalls.Add("takeown $Option $Target")
+            $global:LASTEXITCODE = 0
+        }
+        Mock icacls {
+            $script:dllCalls.Add("icacls $Target $Operation $Principal")
+            $global:LASTEXITCODE = 0
+        }
+    }
+
+    AfterEach {
+        $global:LASTEXITCODE = $script:savedExitCode
     }
 
     It "removes only registry values managed by WinUtil" {
@@ -258,6 +298,50 @@ Describe "Invoke-WPFUpdatesdefault" {
         Should -Invoke -CommandName Enable-ScheduledTask -Times $script:updateTaskPaths.Count -Exactly
         Should -Not -Invoke secedit
     }
+
+    It "restores update DLLs that an older WinUtil version renamed" {
+        Mock Test-Path { $true } -ParameterFilter { $LiteralPath -clike "*_BAK.dll" }
+
+        Invoke-WPFUpdatesdefault
+
+        foreach ($expectedDllName in @("WaaSMedicSvc", "wuaueng")) {
+            $expected = $expectedDllName
+            Should -Invoke -CommandName Rename-Item -Times 1 -Exactly -ParameterFilter {
+                $LiteralPath -clike "*\${expected}_BAK.dll" -and $NewName -ceq "$expected.dll"
+            }
+        }
+        $script:dllCalls.ToArray() | Should -BeExactly $script:updateDllRestoreCalls
+    }
+
+    It "leaves update DLLs alone when no renamed backup exists" {
+        Invoke-WPFUpdatesdefault
+
+        foreach ($expectedDllName in @("WaaSMedicSvc", "wuaueng")) {
+            $expected = $expectedDllName
+            Should -Invoke -CommandName Test-Path -Times 1 -Exactly -ParameterFilter {
+                $LiteralPath -clike "*\${expected}_BAK.dll"
+            }
+        }
+        Should -Not -Invoke takeown
+        Should -Not -Invoke icacls
+        Should -Not -Invoke Rename-Item
+    }
+
+    It "never replaces an update DLL that is already present" {
+        Mock Test-Path { $true } -ParameterFilter { $LiteralPath -clike "*.dll" }
+
+        Invoke-WPFUpdatesdefault
+
+        foreach ($expectedDllName in @("WaaSMedicSvc", "wuaueng")) {
+            $expected = $expectedDllName
+            Should -Invoke -CommandName Test-Path -Times 1 -Exactly -ParameterFilter {
+                $LiteralPath -clike "*\$expected.dll"
+            }
+        }
+        Should -Not -Invoke takeown
+        Should -Not -Invoke icacls
+        Should -Not -Invoke Rename-Item
+    }
 }
 
 Describe "Invoke-WPFUpdatessecurity" {
@@ -277,6 +361,21 @@ Describe "Invoke-WPFUpdatessecurity" {
             }
         }
         Mock Enable-ScheduledTask { }
+        $script:savedExitCode = $global:LASTEXITCODE
+        $script:dllCalls = [System.Collections.Generic.List[string]]::new()
+        Mock Rename-Item { $script:dllCalls.Add("rename $LiteralPath $NewName") }
+        Mock takeown {
+            $script:dllCalls.Add("takeown $Option $Target")
+            $global:LASTEXITCODE = 0
+        }
+        Mock icacls {
+            $script:dllCalls.Add("icacls $Target $Operation $Principal")
+            $global:LASTEXITCODE = 0
+        }
+    }
+
+    AfterEach {
+        $global:LASTEXITCODE = $script:savedExitCode
     }
 
     It "restores update availability before applying recommended settings" {
@@ -309,6 +408,20 @@ Describe "Invoke-WPFUpdatessecurity" {
             }
         }
         Should -Invoke -CommandName Enable-ScheduledTask -Times $script:updateTaskPaths.Count -Exactly
+    }
+
+    It "restores update DLLs that an older WinUtil version renamed" {
+        Mock Test-Path { $true } -ParameterFilter { $LiteralPath -clike "*_BAK.dll" }
+
+        Invoke-WPFUpdatessecurity
+
+        foreach ($expectedDllName in @("WaaSMedicSvc", "wuaueng")) {
+            $expected = $expectedDllName
+            Should -Invoke -CommandName Rename-Item -Times 1 -Exactly -ParameterFilter {
+                $LiteralPath -clike "*\${expected}_BAK.dll" -and $NewName -ceq "$expected.dll"
+            }
+        }
+        $script:dllCalls.ToArray() | Should -BeExactly $script:updateDllRestoreCalls
     }
 
     It "disables driver metadata and Windows Update driver search" {
