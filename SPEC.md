@@ -107,7 +107,7 @@ Because the final script is concatenated, code cannot rely on runtime module imp
 - `.\Compile.ps1` verifies the compiler can generate `winutil.ps1`.
 - `.\Compile.ps1 -Run` compiles and launches the generated utility for manual GUI verification.
 - Pester 5.8.0 runs the suite under `pester/*.Tests.ps1`. GitHub Actions (`unittests.yaml`) installs Pester 5.8.0 fresh and runs with `-CI`, which produces `testResults.xml` and exits non-zero on failure.
-- GitHub Actions also runs PowerShell Script Analyzer with `lint/PSScriptAnalyser.ps1` on every push.
+- GitHub Actions also runs PowerShell Script Analyzer with `lint/PSScriptAnalyser.ps1`. Both jobs run on every push and on pull requests to `main`.
 - The generated `winutil.ps1` may appear locally after compile. It remains ignored build output (see root `.gitignore`) and must not be committed.
 - The manually triggered title-screen workflow compiles WinUtil from `main` and opens an image-only pull request when the generated composite changes. These pull requests require manual review. Failed runs retain diagnostics for 14 days.
 
