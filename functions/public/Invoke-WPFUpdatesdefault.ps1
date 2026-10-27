@@ -54,6 +54,8 @@ function Invoke-WPFUpdatesdefault {
     Write-Host "Reenabling Windows Update Services..." -ForegroundColor Green
     Write-WinUtilLog -Component "Updates" -Message "Restoring Windows Update service startup types."
 
+    Restore-WinUtilUpdateDll
+
     Write-Host "Restored BITS to Manual."
     Write-WinUtilLog -Component "Updates" -Message "Restoring BITS service to Manual."
     Set-Service -Name BITS -StartupType Manual
