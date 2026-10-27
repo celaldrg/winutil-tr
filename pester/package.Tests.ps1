@@ -158,7 +158,7 @@ Describe "Install-WinUtilProgramWinget" {
 
         Should -Invoke -CommandName Start-Process -Times 1 -Exactly -ParameterFilter {
             $FilePath -eq "winget" -and
-                (@($ArgumentList) -join "|") -eq "install|--id|Git.Git|--accept-package-agreements|--accept-source-agreements|--source|winget|--silent" -and
+                (@($ArgumentList) -join "|") -eq "install|--id|Git.Git|--accept-package-agreements|--accept-source-agreements|--source|winget|--silent|--disable-interactivity" -and
                 $NoNewWindow -eq $true -and
                 $Wait -eq $true -and
                 $PassThru -eq $true
@@ -170,7 +170,7 @@ Describe "Install-WinUtilProgramWinget" {
 
         Should -Invoke -CommandName Start-Process -Times 1 -Exactly -ParameterFilter {
             $FilePath -eq "winget" -and
-                (@($ArgumentList) -join "|") -eq "uninstall|--id|9NBLGGH4NNS1|--source|msstore|--silent"
+                (@($ArgumentList) -join "|") -eq "uninstall|--id|9NBLGGH4NNS1|--accept-source-agreements|--source|msstore|--silent|--disable-interactivity"
         }
     }
 
@@ -180,6 +180,17 @@ Describe "Install-WinUtilProgramWinget" {
         Should -Invoke -CommandName Start-Process -Times 1 -Exactly -ParameterFilter {
             $FilePath -eq "winget" -and
                 (@($ArgumentList) -join "|") -eq "upgrade|--all|--accept-package-agreements|--accept-source-agreements|--include-unknown|--silent"
+        }
+    }
+
+    It "upgrades a single package without waiting for console input" {
+        Install-WinUtilProgramWinget -Action Upgrade -Programs @("Git.Git")
+
+        Should -Invoke -CommandName Start-Process -Times 1 -Exactly -ParameterFilter {
+            $FilePath -eq "winget" -and
+                $ArgumentList -contains "--id" -and
+                $ArgumentList -contains "Git.Git" -and
+                $ArgumentList -contains "--disable-interactivity"
         }
     }
 

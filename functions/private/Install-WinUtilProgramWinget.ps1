@@ -177,6 +177,11 @@ Function Install-WinUtilProgramWinget {
     # elevated, so every per-user app answers this and nothing happens.
     $adminContextProhibited = -1978335107
 
+    # APPINSTALLER_CLI_ERROR_INSTALL_LOCATION_REQUIRED. Some manifests, such as Blizzard.BattleNet,
+    # require an install location. With interactivity disabled, WinGet exits with this code
+    # instead of stopping the run at a console prompt for the folder.
+    $installLocationRequired = -1978335137
+
     # WinGet reports "there was nothing to do" through the exit code rather than as success
     $nothingToDo = @{
         -1978335135 = "already installed"
@@ -232,17 +237,19 @@ Function Install-WinUtilProgramWinget {
 
         $arguments = switch ($Action) {
             "Uninstall" {
-                @("uninstall", "--id", $program, "--source", $source, "--silent")
+                @("uninstall", "--id", $program, "--accept-source-agreements", "--source", $source, "--silent", "--disable-interactivity")
             }
             "Upgrade" {
                 if ($upgradeAll) {
+                    # No --disable-interactivity here: one pending update that needs an install
+                    # location would then fail the whole run before anything is upgraded.
                     @("upgrade", "--all", "--accept-package-agreements", "--accept-source-agreements", "--include-unknown", "--silent")
                 } else {
-                    @("upgrade", "--id", $program, "--accept-package-agreements", "--accept-source-agreements", "--source", $source, "--include-unknown", "--silent")
+                    @("upgrade", "--id", $program, "--accept-package-agreements", "--accept-source-agreements", "--source", $source, "--include-unknown", "--silent", "--disable-interactivity")
                 }
             }
             default {
-                @("install", "--id", $program, "--accept-package-agreements", "--accept-source-agreements", "--source", $source, "--silent")
+                @("install", "--id", $program, "--accept-package-agreements", "--accept-source-agreements", "--source", $source, "--silent", "--disable-interactivity")
             }
         }
 
@@ -265,6 +272,9 @@ Function Install-WinUtilProgramWinget {
                 "Upgrade" { "not upgraded; installed for the current user and elevated WinUtil cannot modify it" }
                 "Uninstall" { "remains installed for the current user; elevated WinUtil cannot uninstall it" }
             }
+        } elseif ($exitCode -eq $installLocationRequired) {
+            $outcome = "Failed"
+            $detail = "WinGet needs an install location for this package. Install it once by hand with: winget install --id $program --location <folder>"
         } else {
             $outcome = "Failed"
             $detail = "WinGet reported 0x{0:X8}. See https://learn.microsoft.com/windows/package-manager/winget/returnCodes" -f $exitCode
