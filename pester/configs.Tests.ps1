@@ -347,6 +347,19 @@ Describe "Tweaks config" {
 
         $sidCount | Should -Be $ExpectedCount -Because "$Tweak must pass $Sid to icacls at every call site instead of a localized account name"
     }
+
+    It "restarts Explorer through the shared helper in the classic context menu tweak" -TestCases $testCase {
+        param([string]$Path)
+
+        $tweaks = Get-Content -Path $Path -Raw | ConvertFrom-Json
+        $rightClickMenu = $tweaks.WPFTweaksRightClickMenu
+        $invokeScript = @($rightClickMenu.InvokeScript) -join "`n"
+        $scripts = (@($rightClickMenu.InvokeScript) + @($rightClickMenu.UndoScript)) -join "`n"
+
+        # A bare Stop-Process leaves restarting the shell to Windows, which did not always bring it back
+        $invokeScript | Should -MatchExactly ([regex]::Escape('Invoke-WinUtilExplorerUpdate -action "restart"'))
+        $scripts | Should -Not -MatchExactly 'Stop-Process\s+-Name\s+explorer'
+    }
 }
 
 Describe "Config scripts changing services" {
