@@ -1144,7 +1144,7 @@
     "InvokeScript": [
       "
       New-Item -Path \"HKCU:\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\" -Name InprocServer32 -Value \"\" -Force
-      Stop-Process -Name explorer
+      Invoke-WinUtilExplorerUpdate -action \"restart\"
       "
     ],
     "UndoScript": [
@@ -1174,7 +1174,8 @@
       "
       # A temp folder always holds files something has open, including this run's own, and
       # the job layer counts a logged error as a failed step
-      Remove-Item -Path \"$Env:Temp\\*\" -Recurse -Force -ErrorAction SilentlyContinue
+      # PowerShell 7 loads Appx and BitLocker through Windows PowerShell compatibility proxies stored in $Env:Temp\\remoteIpMoProxy_*
+      Get-ChildItem -LiteralPath $Env:Temp -Force -ErrorAction SilentlyContinue | Where-Object { $_.Name -cnotlike 'remoteIpMoProxy_*' } | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
       Remove-Item -Path \"$Env:SystemRoot\\Temp\\*\" -Recurse -Force -ErrorAction SilentlyContinue
       "
     ],
