@@ -86,6 +86,23 @@ Describe "Install-WinUtilProgramWinget outcomes" {
         }
     }
 
+    It "reports a package that needs an install location as a failure that says how to install it" {
+        # Interactivity is disabled, so WinGet exits with this code instead of waiting at a
+        # console prompt for the install folder
+        Mock Start-Process { [pscustomobject]@{ ExitCode = -1978335137 } }
+
+        $result = Install-WinUtilProgramWinget -Action Install -Programs @("Blizzard.BattleNet")
+
+        $result.Outcome | Should -Be "Failed"
+        $result.ExitCode | Should -Be -1978335137
+        $result.Detail | Should -BeLike "*install location*"
+        $result.Detail | Should -BeLike "*winget install --id Blizzard.BattleNet --location*"
+        Should -Invoke -CommandName Write-WinUtilLog -Times 1 -Exactly -ParameterFilter { $Level -eq "ERROR" }
+        Should -Invoke -CommandName Write-WinUtilLog -Times 1 -Exactly -ParameterFilter {
+            $Level -eq "ERROR" -and $Message -like "*failed: Blizzard.BattleNet (*install location*"
+        }
+    }
+
     It "returns one result per package" {
         Mock Start-Process { [pscustomobject]@{ ExitCode = 0 } }
 
