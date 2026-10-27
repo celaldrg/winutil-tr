@@ -1,0 +1,495 @@
+{
+  "configs": {
+    "tweaks": {
+      "WPFTweaksActivity": {
+        "Content": ["Activity History - Disable", "Etkinlik Geçmişi - Devre Dışı Bırak"],
+        "Description": ["Stops Windows from publishing or uploading user activities while preserving clipboard history.", "Pano geçmişini korurken Windows'un kullanıcı etkinliklerini yayımlamasını veya karşıya yüklemesini engeller."]
+      },
+      "WPFTweaksHiber": {
+        "Content": ["Hibernation - Disable", "Hazırda Bekletme - Devre Dışı Bırak"],
+        "Description": ["Hibernation is really meant for laptops as it saves what's in memory before turning the PC off. It really should never be used.", "Hazırda Bekletme, bilgisayarı kapatmadan önce bellektekileri kaydettiğinden asıl olarak dizüstü bilgisayarlar için düşünülmüştür. Gerçekten hiçbir zaman kullanılmamalıdır."]
+      },
+      "WPFTweaksWidget": {
+        "Content": ["Widgets - Remove", "Pencere Öğeleri - Kaldır"],
+        "Description": ["Removes the annoying widgets in the bottom left of the Taskbar.", "Görev çubuğunun sol alt köşesindeki rahatsız edici pencere öğelerini kaldırır."]
+      },
+      "WPFTweaksRevertStartMenu": {
+        "Content": ["Start Menu Previous Layout - Enable", "Başlat Menüsü Önceki Düzeni - Etkinleştir"],
+        "Description": ["Bring back the old Start Menu layout from before the gradual rollout of the new one in 25H2. On newer versions of Windows !!THIS TWEAK WILL NOT WORK!!", "Yeni Başlat menüsü düzeninin 25H2 sürümünde kademeli olarak kullanıma sunulmasından önceki eski düzeni geri getirir. Windows'un daha yeni sürümlerinde !!BU İNCE AYAR ÇALIŞMAZ!!"]
+      },
+      "WPFTweaksDisableStoreSearch": {
+        "Content": ["Microsoft Store Recommended Search Results - Disable", "Microsoft Store Önerilen Arama Sonuçları - Devre Dışı Bırak"],
+        "Description": ["Will not display recommended Microsoft Store apps when searching for apps in the Start menu.", "Başlat menüsünde uygulama ararken önerilen Microsoft Store uygulamalarını göstermez."]
+      },
+      "WPFTweaksLocation": {
+        "Content": ["Location Tracking - Disable", "Konum İzleme - Devre Dışı Bırak"],
+        "Description": ["Disables Location Tracking.", "Konum izlemeyi devre dışı bırakır."]
+      },
+      "WPFTweaksServices": {
+        "Content": ["Services - Set to Manual", "Hizmetler - El ile Başlatmaya Ayarla"],
+        "Description": ["Sets some services to Manual startup.", "Bazı hizmetlerin başlangıç türünü El ile olarak ayarlar."]
+      },
+      "WPFTweaksSvcHostSplitting": {
+        "Content": ["svchost.exe Splitting - Disable", "svchost.exe Bölme - Devre Dışı Bırak"],
+        "Description": ["Disables service-host splitting to reduce the number of svchost.exe processes and modestly lower memory overhead. Recommended for low-performance systems with 12 GB of RAM or less. Can interfere with Xbox services. Restart Windows after changing this setting.", "Hizmet ana bilgisayarı bölmeyi devre dışı bırakarak svchost.exe işlemlerinin sayısını azaltır ve bellek yükünü bir miktar düşürür. 12 GB veya daha az RAM bulunan düşük performanslı sistemler için önerilir. Xbox hizmetlerinde sorunlara yol açabilir. Bu ayarı değiştirdikten sonra Windows'u yeniden başlatın."]
+      },
+      "WPFTweaksBraveDebloat": {
+        "Content": ["Brave Browser - Debloat", "Brave Browser - Sadeleştir"],
+        "Description": ["Disables various annoyances like Brave Rewards, Leo AI, Crypto Wallet and VPN.", "Brave Rewards, Leo AI, Crypto Wallet ve VPN gibi çeşitli rahatsız edici özellikleri devre dışı bırakır."]
+      },
+      "WPFTweaksDisableWarningForUnsignedRdp": {
+        "Content": ["RDP Unsigned File Warnings - Disable", "RDP İmzasız Dosya Uyarıları - Devre Dışı Bırak"],
+        "Description": ["Disables warnings shown when launching unsigned RDP files introduced with the latest Windows 10 and 11 updates.", "En son Windows 10 ve 11 güncellemeleriyle eklenen ve imzasız RDP dosyaları açılırken gösterilen uyarıları devre dışı bırakır."]
+      },
+      "WPFTweaksEdgeDebloat": {
+        "Content": ["Microsoft Edge - Debloat", "Microsoft Edge - Sadeleştir"],
+        "Description": ["Disables various telemetry options, popups, and other annoyances in Edge.", "Edge'deki çeşitli telemetri seçeneklerini, açılır pencereleri ve diğer rahatsız edici öğeleri devre dışı bırakır."]
+      },
+      "WPFTweaksConsumerFeatures": {
+        "Content": ["ConsumerFeatures - Disable", "ConsumerFeatures - Devre Dışı Bırak"],
+        "Description": ["Stops promoted app installs and reduces app suggestions from Microsoft Store content.", "Tanıtılan uygulamaların yüklenmesini durdurur ve Microsoft Store içeriklerinden gelen uygulama önerilerini azaltır."]
+      },
+      "WPFTweaksTelemetry": {
+        "Content": ["Telemetry - Disable", "Telemetri - Devre Dışı Bırak"],
+        "Description": ["Disables Microsoft Telemetry.", "Microsoft telemetrisini devre dışı bırakır."]
+      },
+      "WPFTweaksDeliveryOptimization": {
+        "Content": ["Delivery Optimization - Disable", "Teslim İyileştirme - Devre Dışı Bırak"],
+        "Description": ["Stops Windows from using your bandwidth to upload updates to other PCs on the internet or local network.", "Windows'un, güncellemeleri internetteki veya yerel ağdaki diğer bilgisayarlara karşıya yüklemek için bant genişliğinizi kullanmasını engeller."]
+      },
+      "WPFTweaksRemoveEdge": {
+        "Content": ["Microsoft Edge - Remove", "Microsoft Edge - Kaldır"],
+        "Description": ["Uninstalls Microsoft Edge by creating dummy MicrosoftEdge.exe file in the legacy Edge folder. This tricks Windows into unlocking the official Edge uninstaller allowing for a system-level removal.", "Eski Edge klasöründe sahte bir MicrosoftEdge.exe dosyası oluşturarak Microsoft Edge'i kaldırır. Bu yöntem Windows'u kandırarak resmi Edge kaldırıcısının kilidini açtırır ve sistem düzeyinde kaldırmaya olanak tanır."]
+      },
+      "WPFTweaksDisableBitLocker": {
+        "Content": ["BitLocker - Disable", "BitLocker - Devre Dışı Bırak"],
+        "Description": ["Disables BitLocker.", "BitLocker'ı devre dışı bırakır."]
+      },
+      "WPFTweaksUTC": {
+        "Content": ["Date & Time - Set Time to UTC", "Tarih ve Saat - Saati UTC Olarak Ayarla"],
+        "Description": ["Essential for computers that are dual booting. Fixes the time sync with Linux systems.", "Çift önyükleme yapan bilgisayarlar için gereklidir. Linux sistemleriyle saat eşitlemesini düzeltir."]
+      },
+      "WPFTweaksRemoveOneDrive": {
+        "Content": ["Microsoft OneDrive - Remove", "Microsoft OneDrive - Kaldır"],
+        "Description": ["Denies permission to remove OneDrive user files, then uses its own uninstaller to remove it and restores the original permission afterward.", "OneDrive kullanıcı dosyalarını kaldırma iznini reddeder, ardından OneDrive'ı kendi kaldırıcısıyla kaldırır ve sonrasında özgün izni geri yükler."]
+      },
+      "WPFTweaksRemoveHomeAndGallery": {
+        "Content": ["File Explorer Home and Gallery - Disable", "Dosya Gezgini Giriş ve Galeri - Devre Dışı Bırak"],
+        "Description": ["Removes the Home and Gallery from Explorer and sets This PC as default.", "Giriş ve Galeri öğelerini Dosya Gezgini'nden kaldırır ve Bu bilgisayar öğesini varsayılan olarak ayarlar."]
+      },
+      "WPFTweaksDisplay": {
+        "Content": ["Visual Effects - Set to Best Performance", "Görsel Efektler - En İyi Performans için Ayarla"],
+        "Description": ["Sets the system preferences to performance. You can do this manually with sysdm.cpl as well.", "Sistem tercihlerini performansa göre ayarlar. Bunu sysdm.cpl üzerinden el ile de yapabilirsiniz."]
+      },
+      "WPFTweaksReservedStorage": {
+        "Content": ["Disable Reserved Storage", "Ayrılmış Depolamayı Devre Dışı Bırak"],
+        "Description": ["Disables Windows Reserved Storage (7-10 GB held for updates/temp files). Recommended only on small drives. Re-enable before major Windows feature updates to avoid installation failures.", "Windows'un Ayrılmış Depolama özelliğini (güncellemeler/geçici dosyalar için ayrılan 7-10 GB) devre dışı bırakır. Yalnızca küçük sürücülerde önerilir. Yükleme hatalarını önlemek için büyük Windows özellik güncellemelerinden önce yeniden etkinleştirin."]
+      },
+      "WPFTweaksRestorePoint": {
+        "Content": ["Restore Point - Create", "Geri Yükleme Noktası - Oluştur"],
+        "Description": ["Creates a restore point at runtime in case a revert is needed from WinUtil modifications.", "WinUtil değişikliklerinin geri alınması gerekirse kullanılmak üzere, çalışma sırasında bir geri yükleme noktası oluşturur."]
+      },
+      "WPFTweaksEndTaskOnTaskbar": {
+        "Content": ["End Task With Right Click - Enable", "Sağ Tıklama ile Görevi Sonlandır - Etkinleştir"],
+        "Description": ["Enables option to end task when right-clicking a program in the taskbar.", "Görev çubuğunda bir programa sağ tıklandığında görevi sonlandırma seçeneğini etkinleştirir."]
+      },
+      "WPFTweaksStorage": {
+        "Content": ["Storage Sense - Disable", "Depolama Algısı - Devre Dışı Bırak"],
+        "Description": ["Storage Sense deletes temp files automatically.", "Depolama Algısı geçici dosyaları otomatik olarak siler."]
+      },
+      "WPFTweaksWindowsAI": {
+        "Content": ["Windows AI - Disable And Remove", "Windows AI - Devre Dışı Bırak ve Kaldır"],
+        "Description": ["Removes and disables all AI features/packages", "Tüm yapay zeka özelliklerini/paketlerini kaldırır ve devre dışı bırakır"]
+      },
+      "WPFTweaksWPBT": {
+        "Content": ["Windows Platform Binary Table (WPBT) - Disable", "Windows Platform Binary Table (WPBT) - Devre Dışı Bırak"],
+        "Description": ["If enabled, WPBT allows your computer vendor to execute programs at boot time, such as anti-theft software, software drivers, as well as force install software without user consent. Poses potential security risk.", "Etkin olduğunda WPBT, bilgisayar üreticinizin önyükleme sırasında hırsızlık önleme yazılımı ve yazılım sürücüleri gibi programları çalıştırmasına ve kullanıcının onayı olmadan zorla yazılım yüklemesine olanak tanır. Olası bir güvenlik riski oluşturur."]
+      },
+      "WPFTweaksPreventDeviceMetadataFromNetwork": {
+        "Content": ["Prevent Device Companion Apps", "Cihaz Yardımcı Uygulamalarını Engelle"],
+        "Description": ["Prevents additional software from being installed when plugging in devices (e.g. Ads when plugging in a monitor). Poses potential security risk.", "Cihazlar takıldığında ek yazılımların yüklenmesini engeller (ör. bir monitör takıldığında çıkan reklamlar). Olası bir güvenlik riski oluşturur."]
+      },
+      "WPFTweaksRazerBlock": {
+        "Content": ["Razer Software Auto-Install - Disable", "Razer Yazılımı Otomatik Yüklemesi - Devre Dışı Bırak"],
+        "Description": ["Blocks ALL Razer Software installations. The hardware works fine without any software.", "TÜM Razer yazılımı yüklemelerini engeller. Donanım, hiçbir yazılım olmadan da sorunsuz çalışır."]
+      },
+      "WPFTweaksLogiBlock": {
+        "Content": ["Logitech Download Assistant Auto-Install - Disable", "Logitech Download Assistant Otomatik Yüklemesi - Devre Dışı Bırak"],
+        "Description": ["Blocks the Logi Download Assistant that Windows Update keeps reinstalling with Logitech device drivers. Logitech hardware keeps working without it.", "Windows Update'in Logitech cihaz sürücüleriyle birlikte sürekli yeniden yüklediği Logi Download Assistant'ı engeller. Logitech donanımı bu yazılım olmadan da çalışmaya devam eder."]
+      },
+      "WPFTweaksDisableNotifications": {
+        "Content": ["System Tray Notifications & Calendar - Disable", "Sistem Tepsisi Bildirimleri ve Takvim - Devre Dışı Bırak"],
+        "Description": ["Disables all Notifications INCLUDING Calendar.", "Takvim DAHİL tüm bildirimleri devre dışı bırakır."]
+      },
+      "WPFTweaksBlockAdobeNet": {
+        "Content": ["Adobe URL Block List - Enable", "Adobe URL Engelleme Listesi - Etkinleştir"],
+        "Description": ["Reduces user interruptions by selectively blocking connections to Adobe's activation and telemetry servers. Credit: Ruddernation-Designs", "Adobe'nin etkinleştirme ve telemetri sunucularına giden bağlantıları seçici olarak engelleyerek kullanıcının karşılaştığı kesintileri azaltır. Katkı: Ruddernation-Designs"]
+      },
+      "WPFTweaksRightClickMenu": {
+        "Content": ["Right-Click Menu Previous Layout - Enable", "Sağ Tık Menüsü Önceki Düzeni - Etkinleştir"],
+        "Description": ["Restores the classic context menu when right-clicking in File Explorer, replacing the simplified Windows 11 version.", "Dosya Gezgini'nde sağ tıklandığında sadeleştirilmiş Windows 11 sürümünün yerine klasik bağlam menüsünü geri getirir."]
+      },
+      "WPFTweaksDiskCleanup": {
+        "Content": ["Disk Cleanup - Run", "Disk Temizleme - Çalıştır"],
+        "Description": ["Runs Disk Cleanup on Drive C: and removes old Windows Updates.", "C: sürücüsünde Disk Temizleme aracını çalıştırır ve eski Windows güncellemelerini kaldırır."]
+      },
+      "WPFTweaksDeleteTempFiles": {
+        "Content": ["Temporary Files - Remove", "Geçici Dosyalar - Kaldır"],
+        "Description": ["Erases TEMP Folders.", "TEMP klasörlerini siler."]
+      },
+      "WPFTweaksIPv46": {
+        "Content": ["IPv6 - Set IPv4 as Preferred", "IPv6 - IPv4'ü Tercih Edilen Olarak Ayarla"],
+        "Description": ["Setting the IPv4 preference can have latency and security benefits on private networks where IPv6 is not configured.", "IPv4 tercihini ayarlamak, IPv6'nın yapılandırılmadığı özel ağlarda gecikme ve güvenlik açısından avantaj sağlayabilir."]
+      },
+      "WPFTweaksTeredo": {
+        "Content": ["Teredo - Disable", "Teredo - Devre Dışı Bırak"],
+        "Description": ["Teredo network tunneling is an IPv6 feature that can cause additional latency, but may cause problems with some games.", "Teredo ağ tünellemesi, ek gecikmeye neden olabilen bir IPv6 özelliğidir ancak bazı oyunlarda sorunlara yol açabilir."]
+      },
+      "WPFTweaksDisableIPv6": {
+        "Content": ["IPv6 - Disable", "IPv6 - Devre Dışı Bırak"],
+        "Description": ["Disables IPv6.", "IPv6'yı devre dışı bırakır."]
+      },
+      "WPFTweaksDisableBGapps": {
+        "Content": ["Background Apps - Disable", "Arka Plan Uygulamaları - Devre Dışı Bırak"],
+        "Description": ["Disables all Microsoft Store apps from running in the background, which has to be done individually since Windows 11.", "Tüm Microsoft Store uygulamalarının arka planda çalışmasını devre dışı bırakır; Windows 11'den bu yana bu işlemin her uygulama için ayrı ayrı yapılması gerekir."]
+      },
+      "WPFTweaksDisableExplorerAutoDiscovery": {
+        "Content": ["File Explorer Automatic Folder Discovery - Disable", "Dosya Gezgini Otomatik Klasör Algılama - Devre Dışı Bırak"],
+        "Description": ["Windows Explorer automatically tries to guess the type of the folder based on its contents, slowing down the browsing experience. WARNING! Will disable File Explorer grouping.", "Dosya Gezgini, klasörün türünü içeriğine göre otomatik olarak tahmin etmeye çalışır ve bu da gezinme deneyimini yavaşlatır. UYARI! Dosya Gezgini gruplandırmasını devre dışı bırakır."]
+      },
+      "WPFToggleDetailedBSoD": {
+        "Content": ["BSoD Verbose Mode", "BSoD Ayrıntılı Modu"],
+        "Description": ["Gives more information when you blue screen.", "Mavi ekran hatası oluştuğunda daha fazla bilgi verir."]
+      },
+      "WPFToggleBatteryPercentage": {
+        "Content": ["System Tray Battery Percentage", "Sistem Tepsisinde Pil Yüzdesi"],
+        "Description": ["Shows numeric battery percentage next to the battery icon in the system tray.", "Sistem tepsisindeki pil simgesinin yanında sayısal pil yüzdesini gösterir."]
+      },
+      "WPFToggleDarkMode": {
+        "Content": ["Dark Theme for Windows", "Windows için Koyu Tema"],
+        "Description": ["Dark Mode for the system and applications.", "Sistem ve uygulamalar için Koyu Mod."]
+      },
+      "WPFToggleShowExt": {
+        "Content": ["File Explorer File Extensions", "Dosya Gezgini Dosya Uzantıları"],
+        "Description": ["Shows .file extensions in Explorer (.exe, .png, etc.)", "Dosya uzantılarını Dosya Gezgini'nde gösterir (.exe, .png vb.)"]
+      },
+      "WPFToggleHiddenFiles": {
+        "Content": ["File Explorer Hidden Files", "Dosya Gezgini Gizli Dosyaları"],
+        "Description": ["Reveals hidden files in Explorer.", "Gizli dosyaları Dosya Gezgini'nde gösterir."]
+      },
+      "WPFToggleVerboseLogon": {
+        "Content": ["Logon Verbose Mode", "Oturum Açma Ayrıntılı Modu"],
+        "Description": ["Show detailed messages during startup/shutdown.", "Başlatma/kapatma sırasında ayrıntılı iletileri gösterir."]
+      },
+      "WPFToggleNewOutlook": {
+        "Content": ["Microsoft Outlook New Version", "Microsoft Outlook Yeni Sürümü"],
+        "Description": ["This will ensure the new Outlook application is used.", "Yeni Outlook uygulamasının kullanılmasını sağlar."]
+      },
+      "WPFToggleScrollbars": {
+        "Content": ["Scrollbars Always Visible", "Kaydırma Çubukları Her Zaman Görünür"],
+        "Description": ["If enabled, scrollbars will always be visible. If disabled, Windows will automatically hide scrollbars when not in use.", "Etkin olduğunda kaydırma çubukları her zaman görünür. Devre dışı olduğunda Windows, kullanılmayan kaydırma çubuklarını otomatik olarak gizler."]
+      },
+      "WPFMultiplaneOverlay": {
+        "Content": ["Multiplane Overlay", "Multiplane Overlay"],
+        "Description": ["Multiplane Overlay composes multiple image layers, which can sometimes cause issues with graphics cards. Changes to this preference are applied immediately.", "Multiplane Overlay, birden çok görüntü katmanını birleştirir ve bu durum bazen ekran kartlarında sorunlara yol açabilir. Bu tercihteki değişiklikler hemen uygulanır."],
+        "ComboDescriptions": {
+          "Enabled": ["Uses Windows' default overlay behavior.", "Windows'un varsayılan kaplama davranışını kullanır."],
+          "Disabled (Compatibility)": ["Disables MPO using OverlayTestMode=5, the less aggressive compatibility method.", "Daha az agresif uyumluluk yöntemi olan OverlayTestMode=5 ile MPO'yu devre dışı bırakır."],
+          "Fully Disabled": ["Disables MPO using OverlayTestMode=5 and DisableOverlays=1, the more aggressive method.", "Daha agresif yöntem olan OverlayTestMode=5 ve DisableOverlays=1 ile MPO'yu devre dışı bırakır."]
+        }
+      },
+      "WPFToggleMouseAcceleration": {
+        "Content": ["Mouse Acceleration", "Fare İvmesi"],
+        "Description": ["Makes it so Cursor movement is affected by the speed of your physical mouse movements.", "İmleç hareketinin, fiziksel fare hareketlerinizin hızından etkilenmesini sağlar."]
+      },
+      "WPFToggleNumLock": {
+        "Content": ["Num Lock on Startup", "Başlangıçta Num Lock"],
+        "Description": ["Toggle the Num Lock key state when your computer starts.", "Bilgisayarınız başlarken Num Lock tuşunun açık veya kapalı olmasını ayarlar."]
+      },
+      "WPFToggleWindowSnapping": {
+        "Content": ["Window Snapping", "Pencere Yaslama"],
+        "Description": ["Toggles the window snapping feature when dragging windows.", "Pencereler sürüklenirken pencere yaslama özelliğini açar veya kapatır."]
+      },
+      "WPFToggleStandbyFix": {
+        "Content": ["S0 Sleep Network Connectivity", "S0 Uykusunda Ağ Bağlantısı"],
+        "Description": ["Toggles network connectivity during S0 Sleep which is low power idle in modern laptops.", "Modern dizüstü bilgisayarlardaki düşük güçte boşta kalma durumu olan S0 Uykusu sırasında ağ bağlantısını açar veya kapatır."]
+      },
+      "WPFToggleS3Sleep": {
+        "Content": ["S3 Sleep", "S3 Uykusu"],
+        "Description": ["Toggles between Modern Standby and S3 Sleep, which cuts off power to the CPU while continuing to refresh the memory.", "Modern Bekleme ile, belleği yenilemeye devam ederken CPU'nun gücünü kesen S3 Uykusu arasında geçiş yapar."]
+      },
+      "WPFToggleHideSettingsHome": {
+        "Content": ["Settings Home Page", "Ayarlar Giriş Sayfası"],
+        "Description": ["Toggles the Home Page in the Windows Settings app.", "Windows Ayarlar uygulamasındaki Giriş sayfasını gösterir veya gizler."]
+      },
+      "WPFToggleBingSearch": {
+        "Content": ["Start Menu Bing Search", "Başlat Menüsü Bing Araması"],
+        "Description": ["Toggles Bing web search results in Windows Search.", "Windows Arama'daki Bing web araması sonuçlarını açar veya kapatır."]
+      },
+      "WPFToggleLoginBlur": {
+        "Content": ["Logon Screen Acrylic Blur", "Oturum Açma Ekranı Akrilik Bulanıklığı"],
+        "Description": ["Toggles the acrylic blur effect on login screen background.", "Oturum açma ekranı arka planındaki akrilik bulanıklık efektini açar veya kapatır."]
+      },
+      "WPFToggleDisableLockscreen": {
+        "Content": ["Lock Screen - Disable", "Kilit Ekranı - Devre Dışı Bırak"],
+        "Description": ["Skips the lock screen entirely and goes directly to the sign-in screen on boot and wake.", "Açılışta ve uykudan uyanırken kilit ekranını tamamen atlayarak doğrudan oturum açma ekranına geçer."]
+      },
+      "WPFToggleStartMenuRecommendations": {
+        "Content": ["Start Menu Recommendations", "Başlat Menüsü Önerileri"],
+        "Description": ["Toggles the recommendations section in the Start Menu. WARNING: This will also disable Windows Spotlight on your Lock Screen as a side effect.", "Başlat menüsündeki öneriler bölümünü gösterir veya gizler. UYARI: Bu işlem, yan etki olarak kilit ekranınızdaki Windows Spotlight özelliğini de devre dışı bırakır."]
+      },
+      "WPFToggleStickyKeys": {
+        "Content": ["Sticky Keys", "Yapışkan Tuşlar"],
+        "Description": ["Toggles the Sticky Keys, which activate when clicking shift rapidly.", "Shift tuşuna hızla art arda basıldığında etkinleşen Yapışkan Tuşlar özelliğini açar veya kapatır."]
+      },
+      "WPFToggleTaskbarAlignment": {
+        "Content": ["Taskbar Centered Icons", "Görev Çubuğunda Ortalanmış Simgeler"],
+        "Description": ["Toggles the Taskbar alignment either to the left or center.", "Görev çubuğu hizalamasını sol ile orta arasında değiştirir."]
+      },
+      "WPFToggleTaskbarSearch": {
+        "Content": ["Taskbar Search Icon", "Görev Çubuğu Arama Simgesi"],
+        "Description": ["Toggles the Search Button on the Taskbar.", "Görev çubuğundaki Arama düğmesini gösterir veya gizler."]
+      },
+      "WPFToggleTaskView": {
+        "Content": ["Taskbar Task View Icon", "Görev Çubuğu Görev Görünümü Simgesi"],
+        "Description": ["Toggles the Task View Button in the Taskbar.", "Görev çubuğundaki Görev Görünümü düğmesini gösterir veya gizler."]
+      },
+      "WPFToggleGameMode": {
+        "Content": ["Game Mode", "Oyun Modu"],
+        "Description": ["Toggles Windows prioritizes gaming performance by allocating system resources to games.", "Windows'un sistem kaynaklarını oyunlara ayırarak oyun performansına öncelik vermesini açar veya kapatır."]
+      },
+      "WPFToggleLongPaths": {
+        "Content": ["Enable Long Paths", "Uzun Yolları Etkinleştir"],
+        "Description": ["Toggles support for file paths longer than 260 characters in Explorer.", "Dosya Gezgini'nde 260 karakterden uzun dosya yolları desteğini açar veya kapatır."]
+      },
+      "WPFOOSUbutton": {
+        "Content": ["O&O ShutUp10++ - Run", "O&O ShutUp10++ - Çalıştır"],
+        "Description": ["Downloads O&O ShutUp10++ (about 82 MB) from oo-software.com on every click and launches it. Nothing is installed; the file is saved under %LocalAppData%\\winutil.", "Her tıklamada O&O ShutUp10++ uygulamasını (yaklaşık 82 MB) oo-software.com adresinden indirir ve başlatır. Hiçbir şey yüklenmez; dosya %LocalAppData%\\winutil altına kaydedilir."]
+      },
+      "WPFchangedns": {
+        "Content": ["DNS - Set to:", "DNS - Ayarla:"]
+      },
+      "WPFAddUltPerf": {
+        "Content": ["Ultimate Performance Profile - Enable", "Nihai Performans Profili - Etkinleştir"]
+      },
+      "WPFRemoveUltPerf": {
+        "Content": ["Ultimate Performance Profile - Disable", "Nihai Performans Profili - Devre Dışı Bırak"]
+      }
+    },
+    "feature": {
+      "WPFFeaturesdotnet": {
+        "Content": [".NET Framework (Versions 2, 3, 4) - Enable", ".NET Framework (Sürüm 2, 3, 4) - Etkinleştir"],
+        "Description": [".NET and .NET Framework is a developer platform made up of tools, programming languages, and libraries for building many different types of applications.", ".NET ve .NET Framework, birçok farklı türde uygulama oluşturmaya yönelik araçlar, programlama dilleri ve kitaplıklardan oluşan bir geliştirici platformudur."]
+      },
+      "WPFFixesNTPPool": {
+        "Content": ["NTP Server - Enable", "NTP Sunucusu - Etkinleştir"],
+        "Description": ["Replaces the default Windows NTP server (time.windows.com) with pool.ntp.org for improved time synchronization accuracy and reliability.", "Daha doğru ve güvenilir saat eşitlemesi için varsayılan Windows NTP sunucusunu (time.windows.com) pool.ntp.org ile değiştirir."]
+      },
+      "WPFFeatureshyperv": {
+        "Content": ["Hyper-V - Enable", "Hyper-V - Etkinleştir"],
+        "Description": ["Hyper-V is a hardware virtualization product developed by Microsoft that allows users to create and manage virtual machines.", "Hyper-V, Microsoft tarafından geliştirilen ve kullanıcıların sanal makineler oluşturup yönetmesine olanak tanıyan bir donanım sanallaştırma ürünüdür."]
+      },
+      "WPFFeatureslegacymedia": {
+        "Content": ["Legacy Media Components (WMP, DirectPlay) - Enable", "Eski Medya Bileşenleri (WMP, DirectPlay) - Etkinleştir"],
+        "Description": ["Enables legacy programs from previous versions of Windows.", "Windows'un önceki sürümlerindeki eski programları etkinleştirir."]
+      },
+      "WPFFeaturewsl": {
+        "Content": ["Windows Subsystem for Linux (WSL) - Enable", "Linux için Windows Alt Sistemi (WSL) - Etkinleştir"],
+        "Description": ["Windows Subsystem for Linux is an optional feature of Windows that allows Linux programs to run natively on Windows without the need for a separate virtual machine or dual booting.", "Linux için Windows Alt Sistemi, ayrı bir sanal makineye veya çift önyüklemeye gerek kalmadan Linux programlarının Windows üzerinde yerel olarak çalışmasını sağlayan isteğe bağlı bir Windows özelliğidir."]
+      },
+      "WPFFeaturenfs": {
+        "Content": ["Network File System (NFS) - Enable", "Ağ Dosya Sistemi (NFS) - Etkinleştir"],
+        "Description": ["Network File System (NFS) is a mechanism for storing files on a network.", "Ağ Dosya Sistemi (NFS), dosyaları bir ağ üzerinde depolamaya yönelik bir mekanizmadır."]
+      },
+      "WPFFeatureRegBackup": {
+        "Content": ["Registry Backup (Daily Task 12:30am) - Enable", "Kayıt Defteri Yedeklemesi (Günlük Görev 00:30) - Etkinleştir"],
+        "Description": ["Enables daily registry backup, previously disabled by Microsoft in Windows 10 1803.", "Microsoft'un Windows 10 1803 sürümünde devre dışı bıraktığı günlük Kayıt Defteri yedeklemesini etkinleştirir."]
+      },
+      "WPFFeatureEnableLegacyRecovery": {
+        "Content": ["Legacy F8 Boot Recovery - Enable", "Eski F8 Önyükleme Kurtarma - Etkinleştir"],
+        "Description": ["Enables Advanced Boot Options screen that lets you start Windows in advanced troubleshooting modes.", "Windows'u gelişmiş sorun giderme modlarında başlatmanızı sağlayan Gelişmiş Önyükleme Seçenekleri ekranını etkinleştirir."]
+      },
+      "WPFFeatureDisableLegacyRecovery": {
+        "Content": ["Legacy F8 Boot Recovery - Disable", "Eski F8 Önyükleme Kurtarma - Devre Dışı Bırak"],
+        "Description": ["Disables Advanced Boot Options screen that lets you start Windows in advanced troubleshooting modes.", "Windows'u gelişmiş sorun giderme modlarında başlatmanızı sağlayan Gelişmiş Önyükleme Seçenekleri ekranını devre dışı bırakır."]
+      },
+      "WPFFeaturesSandbox": {
+        "Content": ["Windows Sandbox - Enable", "Windows Korumalı Alanı - Etkinleştir"],
+        "Description": ["Windows Sandbox is a lightweight virtual machine that provides a temporary desktop environment to safely run applications and programs in isolation.", "Windows Korumalı Alanı, uygulamaları ve programları yalıtılmış olarak güvenle çalıştırmak için geçici bir masaüstü ortamı sağlayan hafif bir sanal makinedir."]
+      },
+      "WPFFeatureInstall": {
+        "Content": ["Install Features", "Özellikleri Yükle"]
+      },
+      "WPFPanelAutologin": {
+        "Content": ["AutoLogon - Run", "AutoLogon - Çalıştır"]
+      },
+      "WPFFixesUpdate": {
+        "Content": ["Windows Update - Reset", "Windows Update - Sıfırla"]
+      },
+      "WPFFixesNetwork": {
+        "Content": ["Network - Reset", "Ağ - Sıfırla"]
+      },
+      "WPFPanelDISM": {
+        "Content": ["System Corruption Scan - Run", "Sistem Bozulması Taraması - Çalıştır"]
+      },
+      "WPFFixesWinget": {
+        "Content": ["WinGet - Reinstall", "WinGet - Yeniden Yükle"]
+      },
+      "WPFPanelComputer": {
+        "Content": ["Computer Management", "Bilgisayar Yönetimi"]
+      },
+      "WPFPanelControl": {
+        "Content": ["Control Panel", "Denetim Masası"]
+      },
+      "WPFPanelMouse": {
+        "Content": ["Mouse Properties", "Fare Özellikleri"]
+      },
+      "WPFPanelNetwork": {
+        "Content": ["Network Connections", "Ağ Bağlantıları"]
+      },
+      "WPFPanelPower": {
+        "Content": ["Power Panel", "Güç Paneli"]
+      },
+      "WPFPanelPrinter": {
+        "Content": ["Printer Panel", "Yazıcı Paneli"]
+      },
+      "WPFPanelPrograms": {
+        "Content": ["Programs and Features", "Programlar ve Özellikler"]
+      },
+      "WPFPanelRegion": {
+        "Content": ["Region", "Bölge"]
+      },
+      "WPFPanelSecurity": {
+        "Content": ["Security and Maintenance", "Güvenlik ve Bakım"]
+      },
+      "WPFPanelSound": {
+        "Content": ["Sound Settings", "Ses Ayarları"]
+      },
+      "WPFPanelSystem": {
+        "Content": ["System Properties", "Sistem Özellikleri"]
+      },
+      "WPFPanelTimedate": {
+        "Content": ["Time and Date", "Tarih ve Saat"]
+      },
+      "WPFPanelFirewall": {
+        "Content": ["Windows Defender Firewall", "Windows Defender Güvenlik Duvarı"]
+      },
+      "WPFPanelRestore": {
+        "Content": ["Windows Restore", "Windows Geri Yükleme"]
+      },
+      "WPFWinUtilInstallPSProfile": {
+        "Content": ["CTT PowerShell Profile - Install", "CTT PowerShell Profili - Yükle"]
+      },
+      "WPFWinUtilUninstallPSProfile": {
+        "Content": ["CTT PowerShell Profile - Remove", "CTT PowerShell Profili - Kaldır"]
+      },
+      "WPFWinUtilSSHServer": {
+        "Content": ["OpenSSH Server - Enable", "OpenSSH Sunucusu - Etkinleştir"]
+      }
+    },
+    "appx": {
+      "WPFAppxMicrosoft_WindowsFeedbackHub": {
+        "Description": ["Allows users to submit bug reports, feature suggestions, and diagnostic data directly to Microsoft.", "Kullanıcıların hata raporlarını, özellik önerilerini ve tanılama verilerini doğrudan Microsoft'a göndermesini sağlar."]
+      },
+      "WPFAppxMicrosoft_GetHelp": {
+        "Description": ["Provides access to automated troubleshooting guides, support documentation, and direct Microsoft customer assistance.", "Otomatik sorun giderme kılavuzlarına, destek belgelerine ve doğrudan Microsoft müşteri desteğine erişim sağlar."]
+      },
+      "WPFAppxMicrosoft_OutlookForWindows": {
+        "Description": ["Provides modern email management, calendar scheduling, and contact organization features.", "Modern e-posta yönetimi, takvim planlama ve kişi düzenleme özellikleri sunar."]
+      },
+      "WPFAppxMSTeams": {
+        "Description": ["Facilitates instant messaging, video conferencing, file sharing, and workspace collaboration.", "Anlık mesajlaşma, görüntülü konferans, dosya paylaşımı ve çalışma alanında iş birliğini kolaylaştırır."]
+      },
+      "WPFAppxClipchamp_Clipchamp": {
+        "Description": ["Provides a user-friendly video editor with built-in templates, effects, and timeline editing tools.", "Yerleşik şablonlar, efektler ve zaman çizelgesi düzenleme araçları içeren, kullanımı kolay bir video düzenleyici sunar."]
+      },
+      "WPFAppxMicrosoft_MicrosoftOfficeHub": {
+        "Description": ["Serves as a centralized launcher and dashboard for accessing cloud-based Microsoft 365 apps and recent documents.", "Bulut tabanlı Microsoft 365 uygulamalarına ve son belgelere erişmek için merkezi bir başlatıcı ve pano işlevi görür."]
+      },
+      "WPFAppxMicrosoft_ZuneMusic": {
+        "Description": ["Plays local audio and video files with modern playlist management and casting capabilities.", "Modern çalma listesi yönetimi ve yayınlama özellikleriyle yerel ses ve video dosyalarını oynatır."]
+      },
+      "WPFAppxMicrosoft_BingSearch": {
+        "Description": ["Integrates Microsoft Bing search capabilities and web services directly into the operating system.", "Microsoft Bing arama özelliklerini ve web hizmetlerini doğrudan işletim sistemine tümleştirir."]
+      },
+      "WPFAppxMicrosoftCorporationII_QuickAssist": {
+        "Description": ["Enables secure remote technical support and screen sharing over an internet connection.", "İnternet bağlantısı üzerinden güvenli uzaktan teknik destek ve ekran paylaşımı sağlar."]
+      },
+      "WPFAppxMicrosoft_WindowsDevHome": {
+        "Description": ["Provides a specialized dashboard for software developer environment setups, repository syncing, and hardware widgets.", "Yazılım geliştirici ortamı kurulumları, depo eşitleme ve donanım pencere öğeleri için özel bir pano sunar."]
+      },
+      "WPFAppxMicrosoft_WindowsCrossDevice": {
+        "Description": ["Manages system-level background connectivity with paired mobile devices. Removing this may disable cross-device features such as phone screen mirroring, file transfer, and mobile hotspot handoff integrated into Windows Settings.", "Eşleştirilmiş mobil cihazlarla sistem düzeyinde arka plan bağlantısını yönetir. Bunu kaldırmak, Windows Ayarlar uygulamasıyla tümleşik telefon ekranı yansıtma, dosya aktarımı ve mobil etkin nokta devri gibi cihazlar arası özellikleri devre dışı bırakabilir."]
+      },
+      "WPFAppxMicrosoft_Todos": {
+        "Description": ["Creates, tracks, and synchronizes personal tasks, smart lists, and daily reminders.", "Kişisel görevleri, akıllı listeleri ve günlük anımsatıcıları oluşturur, izler ve eşitler."]
+      },
+      "WPFAppxMicrosoft_PowerAutomateDesktop": {
+        "Description": ["Automates repetitive workflows and desktop tasks using low-code visual scripting.", "Az kodlu görsel betik oluşturma ile yinelenen iş akışlarını ve masaüstü görevlerini otomatikleştirir."]
+      },
+      "WPFAppxMicrosoft_YourPhone": {
+        "Description": ["Synchronizes text messages, phone notifications, photos, and calls from a mobile device to the desktop.", "Mobil cihazdaki kısa mesajları, telefon bildirimlerini, fotoğrafları ve aramaları masaüstüyle eşitler."]
+      },
+      "WPFAppxMicrosoft_MicrosoftStickyNotes": {
+        "Description": ["Creates quick, floating text notes on the desktop that automatically sync across devices.", "Masaüstünde, cihazlar arasında otomatik olarak eşitlenen hızlı ve kayan metin notları oluşturur."]
+      },
+      "WPFAppxMicrosoft_WindowsSoundRecorder": {
+        "Description": ["Records and trims live audio inputs with simple microphone adjustment controls.", "Basit mikrofon ayar denetimleriyle canlı ses girişlerini kaydeder ve kırpar."]
+      },
+      "WPFAppxMicrosoft_WindowsAlarms": {
+        "Description": ["Features world clocks, alarms, countdown timers, stopwatches, and dedicated focus session tracking.", "Dünya saatleri, alarmlar, geri sayım zamanlayıcıları, kronometreler ve özel odaklanma oturumu takibi sunar."]
+      },
+      "WPFAppxMicrosoft_Paint": {
+        "Description": ["Provides built-in digital sketching, basic image editing, and pixel-level graphic manipulation tools.", "Yerleşik dijital çizim, temel görüntü düzenleme ve piksel düzeyinde grafik işleme araçları sunar."]
+      },
+      "WPFAppxMicrosoft_WindowsNotepad": {
+        "Description": ["Provides a lightweight text editor with multi-tab support for plain text files and code snippets.", "Düz metin dosyaları ve kod parçacıkları için çok sekmeli desteğe sahip hafif bir metin düzenleyici sunar."]
+      },
+      "WPFAppxMicrosoft_ScreenSketch": {
+        "Description": ["Captures screenshots or screen recordings with built-in markup, image cropping, and optical character recognition (OCR).", "Yerleşik işaretleme, görüntü kırpma ve optik karakter tanıma (OCR) özellikleriyle ekran görüntüleri veya ekran kayıtları alır."]
+      },
+      "WPFAppxMicrosoft_Copilot": {
+        "Description": ["Launches the Microsoft AI companion for contextual answers, creative writing assistance, and intelligent web search.", "Bağlama uygun yanıtlar, yaratıcı yazma yardımı ve akıllı web araması için Microsoft'un yapay zeka yardımcısını başlatır."]
+      },
+      "WPFAppxMicrosoft_WindowsCalculator": {
+        "Description": ["Performs standard arithmetic, scientific operations, programming calculations, and unit conversions.", "Standart aritmetik ve bilimsel işlemler, programlama hesaplamaları ve birim dönüştürmeleri yapar."]
+      },
+      "WPFAppxMicrosoft_WindowsCamera": {
+        "Description": ["Captures photographs and records video files via connected webcams or imaging hardware.", "Bağlı web kameraları veya görüntüleme donanımı aracılığıyla fotoğraf çeker ve video dosyaları kaydeder."]
+      },
+      "WPFAppxMicrosoft_WindowsPhotos": {
+        "Description": ["Organizes, views, and crops local images with basic color adjustment and album creation tools.", "Temel renk ayarlama ve albüm oluşturma araçlarıyla yerel resimleri düzenler, görüntüler ve kırpar."]
+      },
+      "WPFAppxMicrosoft_BingNews": {
+        "Description": ["Aggregates breaking news headlines, personalized article feeds, and world current events.", "Son dakika haber başlıklarını, kişiselleştirilmiş makale akışlarını ve dünyadan güncel olayları bir araya getirir."]
+      },
+      "WPFAppxMicrosoft_BingWeather": {
+        "Description": ["Displays local real-time weather tracking, radar maps, and historical meteorological forecasts.", "Yerel ve gerçek zamanlı hava durumu takibini, radar haritalarını ve geçmiş meteorolojik tahminleri görüntüler."]
+      },
+      "WPFAppxMicrosoft_GamingApp": {
+        "Description": ["Serves as the primary gaming library manager, social community interface, and PC Game Pass dashboard.", "Ana oyun kitaplığı yöneticisi, sosyal topluluk arabirimi ve PC Game Pass panosu işlevi görür."]
+      },
+      "WPFAppxMicrosoft_XboxGamingOverlay": {
+        "Description": ["Provides customizable in-game status widgets, audio balancing sliders, system monitoring tools, and gameplay recording.", "Özelleştirilebilir oyun içi durum pencere öğeleri, ses dengeleme kaydırıcıları, sistem izleme araçları ve oyun kaydı sunar."]
+      },
+      "WPFAppxMicrosoft_XboxIdentityProvider": {
+        "Description": ["Manages Xbox network user authentication and background account validation for connected titles. Warning: removing this may break Microsoft account sign-in for non-Xbox games and apps that rely on this authentication pipeline.", "Bağlı oyunlar için Xbox ağı kullanıcı kimlik doğrulamasını ve arka planda hesap doğrulamasını yönetir. Uyarı: Bunu kaldırmak, bu kimlik doğrulama akışına dayanan Xbox dışı oyun ve uygulamalarda Microsoft hesabıyla oturum açmayı bozabilir."]
+      },
+      "WPFAppxMicrosoft_XboxSpeechToTextOverlay": {
+        "Description": ["Provides system-level live accessibility captions and voice-to-text translation for gaming chat networks.", "Oyun sohbet ağları için sistem düzeyinde canlı erişilebilirlik altyazıları ve sesten metne çeviri sağlar."]
+      },
+      "WPFAppxMicrosoft_Xbox_TCUI": {
+        "Description": ["Provides core account connection UI modules for single sign-on flows within game titles. Warning: removing this may break Microsoft account authentication in games and apps that do not otherwise require the Xbox app.", "Oyunlardaki çoklu oturum açma akışları için temel hesap bağlantısı arabirim modüllerini sağlar. Uyarı: Bunu kaldırmak, normalde Xbox uygulamasını gerektirmeyen oyun ve uygulamalarda Microsoft hesabı kimlik doğrulamasını bozabilir."]
+      },
+      "WPFAppxMicrosoft_StartExperiencesApp": {
+        "Description": ["Powers the Windows Widgets board, delivering a personalized feed of news, weather, sports, and finance content.", "Haber, hava durumu, spor ve finans içeriklerinden oluşan kişiselleştirilmiş bir akış sunan Windows pencere öğeleri panosunu çalıştırır."]
+      },
+      "WPFAppxMicrosoft_MicrosoftSolitaireCollection": {
+        "Description": ["Bundles built-in card game modes including Klondike, Spider, FreeCell, Pyramid, and TriPeaks alongside daily challenges.", "Günlük görevlerin yanı sıra Klondike, Spider, FreeCell, Pyramid ve TriPeaks dahil yerleşik kart oyunu modlarını bir araya getirir."]
+      },
+      "WPFAppxMicrosoft_ZuneVideo": {
+        "Description": ["The default video player and storefront for purchasing or renting media.", "Medya satın almak veya kiralamak için varsayılan video oynatıcı ve mağaza."]
+      }
+    }
+  }
+}

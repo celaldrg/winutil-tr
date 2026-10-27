@@ -1,0 +1,363 @@
+{
+  "configs": {
+    "applications": {
+      "1password": {
+        "description": ["1Password is a password manager that allows you to store and manage your passwords securely.", "1Password, parolalarınızı güvenli bir şekilde saklamanızı ve yönetmenizi sağlayan bir parola yöneticisidir."]
+      },
+      "7zip": {
+        "description": ["7-Zip is a free and open-source file archiver utility. It supports several compression formats and provides a high compression ratio, making it a popular choice for file compression.", "7-Zip, ücretsiz ve açık kaynaklı bir dosya arşivleme aracıdır. Çeşitli sıkıştırma biçimlerini destekler ve yüksek sıkıştırma oranı sunar; bu da onu dosya sıkıştırma için popüler bir tercih yapar."]
+      },
+      "abdownloadmanager": {
+        "description": ["AB Download Manager is an open-source download accelerator and manager with multi-threaded downloads, queue scheduling, speed limiting, and browser integration.", "AB Download Manager; çok iş parçacıklı indirme, kuyruk zamanlama, hız sınırlama ve tarayıcı tümleştirmesi sunan, açık kaynaklı bir indirme hızlandırıcısı ve yöneticisidir."]
+      },
+      "adobe": {
+        "description": ["Adobe Acrobat Reader is a free PDF viewer with essential features for viewing, printing, and annotating PDF documents.", "Adobe Acrobat Reader, PDF belgelerini görüntüleme, yazdırma ve bunlara not ekleme için temel özellikler sunan ücretsiz bir PDF görüntüleyicisidir."]
+      },
+      "advancedip": {
+        "description": ["Advanced IP Scanner is a fast and easy-to-use network scanner. It is designed to analyze LAN networks and provides information about connected devices.", "Advanced IP Scanner, hızlı ve kullanımı kolay bir ağ tarayıcısıdır. LAN ağlarını analiz etmek için tasarlanmıştır ve bağlı cihazlar hakkında bilgi sağlar."]
+      },
+      "aimp": {
+        "description": ["AIMP is a feature-rich music player with support for various audio formats, playlists, and customizable user interface.", "AIMP, çeşitli ses biçimlerini ve çalma listelerini destekleyen, özelleştirilebilir kullanıcı arabirimine sahip, zengin özellikli bir müzik çalardır."]
+      },
+      "angryipscanner": {
+        "description": ["Angry IP Scanner is an open-source and cross-platform network scanner. It is used to scan IP addresses and ports, providing information about network connectivity.", "Angry IP Scanner, açık kaynaklı ve platformlar arası bir ağ tarayıcısıdır. IP adreslerini ve bağlantı noktalarını taramak için kullanılır ve ağ bağlantısı hakkında bilgi sağlar."]
+      },
+      "anydesk": {
+        "description": ["AnyDesk is a remote desktop software that enables users to access and control computers remotely. It is known for its fast connection and low latency.", "AnyDesk, kullanıcıların bilgisayarlara uzaktan erişip bunları denetlemesini sağlayan bir uzak masaüstü yazılımıdır. Hızlı bağlantısı ve düşük gecikme süresiyle bilinir."]
+      },
+      "audacity": {
+        "description": ["Audacity is a free and open-source audio editing software known for its powerful recording and editing capabilities.", "Audacity, güçlü kayıt ve düzenleme özellikleriyle bilinen, ücretsiz ve açık kaynaklı bir ses düzenleme yazılımıdır."]
+      },
+      "autoruns": {
+        "description": ["This utility shows you what programs are configured to run during system bootup or login.", "Bu yardımcı program, sistem başlangıcında veya oturum açılırken hangi programların çalışacak şekilde yapılandırıldığını gösterir."]
+      },
+      "autohotkey": {
+        "description": ["AutoHotkey is a scripting language for Windows that allows users to create custom automation scripts and macros. It is often used for automating repetitive tasks and customizing keyboard shortcuts.", "AutoHotkey, kullanıcıların özel otomasyon betikleri ve makrolar oluşturmasını sağlayan, Windows için bir betik dilidir. Genellikle tekrarlayan görevleri otomatikleştirmek ve klavye kısayollarını özelleştirmek için kullanılır."]
+      },
+      "battlenet": {
+        "description": ["Battle.net is a launcher for games created and developed by Activision Blizzard", "Battle.net, Activision Blizzard tarafından oluşturulan ve geliştirilen oyunlar için bir başlatıcıdır"]
+      },
+      "bitwarden": {
+        "description": ["Bitwarden is an open-source password management solution. It allows users to store and manage their passwords in a secure and encrypted vault, accessible across multiple devices.", "Bitwarden, açık kaynaklı bir parola yönetimi çözümüdür. Kullanıcıların parolalarını birden çok cihazdan erişilebilen, güvenli ve şifrelenmiş bir kasada saklamasını ve yönetmesini sağlar."]
+      },
+      "blender": {
+        "description": ["Blender is a powerful open-source 3D creation suite, offering modeling, sculpting, animation, and rendering tools.", "Blender; modelleme, yontma, animasyon ve render araçları sunan, güçlü ve açık kaynaklı bir 3B oluşturma paketidir."]
+      },
+      "brave": {
+        "description": ["Brave is a privacy-focused web browser that blocks ads and trackers, offering a faster and safer browsing experience.", "Brave, reklamları ve izleyicileri engelleyerek daha hızlı ve daha güvenli bir tarama deneyimi sunan, gizlilik odaklı bir web tarayıcısıdır."]
+      },
+      "bruno": {
+        "description": ["Bruno is a local-first API client that stores collections as plain text files for version control and collaboration.", "Bruno, koleksiyonları sürüm denetimi ve iş birliği için düz metin dosyaları olarak saklayan, yerel öncelikli bir API istemcisidir."]
+      },
+      "bulkcrapuninstaller": {
+        "description": ["Bulk Crap Uninstaller is a free and open-source uninstaller utility for Windows. It helps users remove unwanted programs and clean up their system by uninstalling multiple applications at once.", "Bulk Crap Uninstaller, Windows için ücretsiz ve açık kaynaklı bir kaldırma aracıdır. Birden çok uygulamayı aynı anda kaldırarak kullanıcıların istenmeyen programlardan kurtulmasına ve sistemlerini temizlemesine yardımcı olur."]
+      },
+      "blurautoclicker": {
+        "description": ["An Auto-clicker with a few advanced features and generally better performance than popular alternatives.", "Birkaç gelişmiş özelliğe sahip ve genellikle popüler alternatiflerinden daha iyi performans gösteren bir otomatik tıklayıcı."]
+      },
+      "calibre": {
+        "description": ["Calibre is a powerful and easy-to-use e-book manager, viewer, and converter.", "Calibre, güçlü ve kullanımı kolay bir e-kitap yöneticisi, görüntüleyicisi ve dönüştürücüsüdür."]
+      },
+      "cemu": {
+        "description": ["Cemu is a highly experimental software to emulate Wii U applications on PC.", "Cemu, Wii U uygulamalarını PC'de çalıştırmaya yönelik, oldukça deneysel bir öykünme yazılımıdır."]
+      },
+      "chatgpt": {
+        "description": ["The official ChatGPT desktop app for Windows, distributed through the Microsoft Store.", "Microsoft Store üzerinden dağıtılan, Windows için resmi ChatGPT masaüstü uygulaması."]
+      },
+      "chatterino": {
+        "description": ["Chatterino is a chat client for Twitch chat that offers a clean and customizable interface for a better streaming experience.", "Chatterino, daha iyi bir yayın deneyimi için sade ve özelleştirilebilir bir arabirim sunan bir Twitch sohbet istemcisidir."]
+      },
+      "chrome": {
+        "description": ["Google Chrome is a widely used web browser known for its speed, simplicity, and seamless integration with Google services.", "Google Chrome; hızı, sadeliği ve Google hizmetleriyle sorunsuz tümleştirmesiyle bilinen, yaygın olarak kullanılan bir web tarayıcısıdır."]
+      },
+      "chromium": {
+        "description": ["Chromium is the open-source project that serves as the foundation for various web browsers, including Chrome.", "Chromium, Chrome dahil çeşitli web tarayıcılarının temelini oluşturan açık kaynaklı projedir."]
+      },
+      "cinebenchr23": {
+        "description": ["Cinebench R23 is a benchmark tool for comparing CPU rendering performance across systems.", "Cinebench R23, CPU render performansını sistemler arasında karşılaştırmaya yönelik bir performans testi aracıdır."]
+      },
+      "claude": {
+        "description": ["Anthropic's Claude desktop application for focused AI-assisted work and chat.", "Yapay zeka destekli, odaklı çalışma ve sohbet için Anthropic'in Claude masaüstü uygulaması."]
+      },
+      "claude-code": {
+        "description": ["Anthropic's agentic coding tool for terminal and IDE development workflows.", "Terminal ve IDE geliştirme iş akışları için Anthropic'in ajan tabanlı kodlama aracı."]
+      },
+      "cmake": {
+        "description": ["CMake is an open-source, cross-platform family of tools designed to build, test and package software.", "CMake, yazılım derlemek, test etmek ve paketlemek için tasarlanmış, açık kaynaklı ve platformlar arası bir araç ailesidir."]
+      },
+      "codex": {
+        "description": ["Codex CLI is an OpenAI coding agent that runs locally in your terminal.", "Codex CLI, terminalinizde yerel olarak çalışan bir OpenAI kodlama ajanıdır."]
+      },
+      "cpuz": {
+        "description": ["CPU-Z is a system monitoring and diagnostic tool for Windows. It provides detailed information about the computer's hardware components, including the CPU, memory, and motherboard.", "CPU-Z, Windows için bir sistem izleme ve tanılama aracıdır. CPU, bellek ve anakart dahil olmak üzere bilgisayarın donanım bileşenleri hakkında ayrıntılı bilgi sağlar."]
+      },
+      "crystaldiskinfo": {
+        "description": ["Crystal Disk Info is a disk health monitoring tool that provides information about the status and performance of hard drives. It helps users anticipate potential issues and monitor drive health.", "Crystal Disk Info, sabit sürücülerin durumu ve performansı hakkında bilgi sağlayan bir disk sağlığı izleme aracıdır. Kullanıcıların olası sorunları önceden fark etmesine ve sürücü sağlığını izlemesine yardımcı olur."]
+      },
+      "crystaldiskmark": {
+        "description": ["Crystal Disk Mark is a disk benchmarking tool that measures the read and write speeds of storage devices. It helps users assess the performance of their hard drives and SSDs.", "Crystal Disk Mark, depolama cihazlarının okuma ve yazma hızlarını ölçen bir disk performans testi aracıdır. Kullanıcıların sabit sürücülerinin ve SSD'lerinin performansını değerlendirmesine yardımcı olur."]
+      },
+      "cursor": {
+        "description": ["AI-powered code editor (VS Code-based) with agentic coding features and integrated AI assistance for development workflows.", "Ajan tabanlı kodlama özellikleri ve geliştirme iş akışları için tümleşik yapay zeka yardımı sunan, yapay zeka destekli kod düzenleyicisi (VS Code tabanlı)."]
+      },
+      "ddu": {
+        "description": ["Display Driver Uninstaller (DDU) is a tool for completely uninstalling graphics drivers from NVIDIA, AMD, and Intel. It is useful for troubleshooting graphics driver-related issues.", "Display Driver Uninstaller (DDU); NVIDIA, AMD ve Intel grafik sürücülerini tamamen kaldırmaya yarayan bir araçtır. Grafik sürücüsüyle ilgili sorunları gidermek için kullanışlıdır."]
+      },
+      "discord": {
+        "description": ["Discord is a popular communication platform with voice, video, and text chat, designed for gamers but used by a wide range of communities.", "Discord; sesli, görüntülü ve yazılı sohbet sunan, oyuncular için tasarlanmış ancak çok çeşitli topluluklar tarafından kullanılan popüler bir iletişim platformudur."]
+      },
+      "dismtools": {
+        "description": ["DISMTools is a fast, customizable GUI for the DISM utility, supporting Windows images from Windows 7 onward. It handles installations on any drive, offers project support, and lets users tweak settings like color modes, language, and DISM versions; powered by both native DISM and a managed DISM API.", "DISMTools, Windows 7 ve sonrasındaki Windows görüntülerini destekleyen, DISM yardımcı programı için hızlı ve özelleştirilebilir bir grafik kullanıcı arabirimidir. Herhangi bir sürücüdeki yüklemeleri işleyebilir, proje desteği sunar ve kullanıcıların renk modları, dil ve DISM sürümleri gibi ayarlarda ince ayar yapmasına olanak tanır; altyapısında hem yerel DISM hem de yönetilen bir DISM API'si bulunur."]
+      },
+      "dorion": {
+        "description": ["Tiny alternative Discord client with a smaller footprint, snappier startup, themes, plugins and more!", "Daha az kaynak kullanımı, daha hızlı açılış, temalar, eklentiler ve daha fazlasını sunan küçük ve alternatif bir Discord istemcisi!"]
+      },
+      "dockerdesktop": {
+        "description": ["Docker Desktop provides a local environment for building, running, and testing containerized applications on Windows.", "Docker Desktop, Windows'ta kapsayıcılı uygulamaları oluşturmak, çalıştırmak ve test etmek için yerel bir ortam sağlar."]
+      },
+      "dotnet6": {
+        "description": [".NET Desktop Runtime 6 is a runtime environment required for running applications developed with .NET 6.", ".NET Desktop Runtime 6, .NET 6 ile geliştirilmiş uygulamaları çalıştırmak için gereken bir çalışma zamanı ortamıdır."]
+      },
+      "dotnet8": {
+        "description": [".NET Desktop Runtime 8 is a runtime environment required for running applications developed with .NET 8.", ".NET Desktop Runtime 8, .NET 8 ile geliştirilmiş uygulamaları çalıştırmak için gereken bir çalışma zamanı ortamıdır."]
+      },
+      "dotnet9": {
+        "description": [".NET Desktop Runtime 9 is a runtime environment required for running applications developed with .NET 9.", ".NET Desktop Runtime 9, .NET 9 ile geliştirilmiş uygulamaları çalıştırmak için gereken bir çalışma zamanı ortamıdır."]
+      },
+      "dotnet10": {
+        "description": [".NET Desktop Runtime 10 is a runtime environment required for running applications developed with .NET 10.", ".NET Desktop Runtime 10, .NET 10 ile geliştirilmiş uygulamaları çalıştırmak için gereken bir çalışma zamanı ortamıdır."]
+      },
+      "dropbox": {
+        "description": ["Dropbox is a cloud storage client for syncing files, sharing content, and keeping documents available across devices.", "Dropbox; dosyaları eşitlemek, içerik paylaşmak ve belgeleri cihazlar arasında erişilebilir tutmak için kullanılan bir bulut depolama istemcisidir."]
+      },
+      "eaapp": {
+        "description": ["EA App is a platform for accessing and playing Electronic Arts games.", "EA App, Electronic Arts oyunlarına erişmek ve bunları oynamak için bir platformdur."]
+      },
+      "eartrumpet": {
+        "description": ["EarTrumpet is an audio control app for Windows, providing a simple and intuitive interface for managing sound settings.", "EarTrumpet, ses ayarlarını yönetmek için basit ve sezgisel bir arabirim sunan, Windows için bir ses denetimi uygulamasıdır."]
+      },
+      "edge": {
+        "description": ["Microsoft Edge is a modern web browser built on Chromium, offering performance, security, and integration with Microsoft services.", "Microsoft Edge; performans, güvenlik ve Microsoft hizmetleriyle tümleştirme sunan, Chromium tabanlı modern bir web tarayıcısıdır."]
+      },
+      "es-de": {
+        "description": ["EmulationStation Desktop Edition is a frontend for browsing and launching games from your multi-platform game collection.", "EmulationStation Desktop Edition, çok platformlu oyun koleksiyonunuzdaki oyunlara göz atmanızı ve bunları başlatmanızı sağlayan bir ön uçtur."]
+      },
+      "enteauth": {
+        "description": ["Ente Auth is a free, cross-platform, end-to-end encrypted authenticator app.", "Ente Auth; ücretsiz, platformlar arası ve uçtan uca şifrelenmiş bir kimlik doğrulayıcı uygulamasıdır."]
+      },
+      "epicgames": {
+        "description": ["Epic Games Launcher is the client for accessing and playing games from the Epic Games Store.", "Epic Games Launcher, Epic Games Store'daki oyunlara erişmek ve bunları oynamak için kullanılan istemcidir."]
+      },
+      "files": {
+        "description": ["Alternative file explorer.", "Alternatif dosya gezgini."]
+      },
+      "fileconverter": {
+        "description": ["File Converter converts and compresses files from the Windows Explorer context menu.", "File Converter, Dosya Gezgini bağlam menüsünden dosyaları dönüştürür ve sıkıştırır."]
+      },
+      "firefox": {
+        "description": ["Mozilla Firefox is an open-source web browser known for its customization options, privacy features, and extensions.", "Mozilla Firefox; özelleştirme seçenekleri, gizlilik özellikleri ve uzantılarıyla bilinen, açık kaynaklı bir web tarayıcısıdır."]
+      },
+      "firefoxesr": {
+        "description": ["Mozilla Firefox is an open-source web browser known for its customization options, privacy features, and extensions. Firefox ESR (Extended Support Release) receives major updates every 42 weeks with minor updates such as crash fixes, security fixes and policy updates as needed, but at least every four weeks.", "Mozilla Firefox; özelleştirme seçenekleri, gizlilik özellikleri ve uzantılarıyla bilinen, açık kaynaklı bir web tarayıcısıdır. Firefox ESR (Extended Support Release) her 42 haftada bir büyük güncelleme alır; çökme düzeltmeleri, güvenlik düzeltmeleri ve ilke güncellemeleri gibi küçük güncellemeleri ise gerektiğinde, ancak en az dört haftada bir alır."]
+      },
+      "floorp": {
+        "description": ["Floorp is an open-source web browser project that aims to provide a simple and fast browsing experience.", "Floorp, basit ve hızlı bir tarama deneyimi sunmayı amaçlayan, açık kaynaklı bir web tarayıcısı projesidir."]
+      },
+      "flux": {
+        "description": ["f.lux adjusts the color temperature of your screen to reduce eye strain during nighttime use.", "f.lux, gece kullanımında göz yorgunluğunu azaltmak için ekranınızın renk sıcaklığını ayarlar."]
+      },
+      "foobar": {
+        "description": ["foobar2000 is a highly customizable and extensible music player for Windows, known for its modular design and advanced features.", "foobar2000, modüler tasarımı ve gelişmiş özellikleriyle bilinen, Windows için son derece özelleştirilebilir ve genişletilebilir bir müzik çalardır."]
+      },
+      "fnm": {
+        "description": ["Fast Node Manager (fnm) is a fast, cross-platform tool for installing and switching between Node.js versions.", "Fast Node Manager (fnm), Node.js sürümlerini yüklemek ve bunlar arasında geçiş yapmak için kullanılan, hızlı ve platformlar arası bir araçtır."]
+      },
+      "foxpdfreader": {
+        "description": ["Foxit PDF Reader is a free PDF viewer with a familiar ribbon-style interface.", "Foxit PDF Reader, tanıdık şerit tarzı bir arabirime sahip ücretsiz bir PDF görüntüleyicisidir."]
+      },
+      "geforcenow": {
+        "description": ["GeForce NOW is a cloud gaming service that allows you to play high-quality PC games on your device.", "GeForce NOW, yüksek kaliteli PC oyunlarını cihazınızda oynamanızı sağlayan bir bulut oyun hizmetidir."]
+      },
+      "gimp": {
+        "description": ["GIMP is a versatile open-source raster graphics editor used for tasks such as photo retouching, image editing, and image composition.", "GIMP; fotoğraf rötuşu, görüntü düzenleme ve görüntü kompozisyonu gibi işler için kullanılan, çok yönlü ve açık kaynaklı bir raster grafik düzenleyicisidir."]
+      },
+      "git": {
+        "description": ["Git is a distributed version control system widely used for tracking changes in source code during software development.", "Git, yazılım geliştirme sürecinde kaynak koddaki değişiklikleri izlemek için yaygın olarak kullanılan, dağıtık bir sürüm denetim sistemidir."]
+      },
+      "gitextensions": {
+        "description": ["Git Extensions is a graphical Git client for Windows with repository, history, and commit management tools.", "Git Extensions; depo, geçmiş ve commit yönetimi araçları sunan, Windows için grafik bir Git istemcisidir."]
+      },
+      "githubcli": {
+        "description": ["GitHub CLI brings pull requests, issues, releases, and other GitHub workflows to the terminal.", "GitHub CLI; çekme isteklerini, sorun kayıtlarını, sürümleri ve diğer GitHub iş akışlarını terminale taşır."]
+      },
+      "githubdesktop": {
+        "description": ["GitHub Desktop is a visual Git client that simplifies collaboration on GitHub repositories with an easy-to-use interface.", "GitHub Desktop, kullanımı kolay arabirimiyle GitHub depolarında iş birliğini kolaylaştıran görsel bir Git istemcisidir."]
+      },
+      "gog": {
+        "description": ["GOG Galaxy is a gaming client that offers DRM-free games, additional content, and more.", "GOG Galaxy; DRM içermeyen oyunlar, ek içerikler ve daha fazlasını sunan bir oyun istemcisidir."]
+      },
+      "golang": {
+        "description": ["Go (or Golang) is a statically typed, compiled programming language designed for simplicity, reliability, and efficiency.", "Go (veya Golang); sadelik, güvenilirlik ve verimlilik için tasarlanmış, statik türlü ve derlenen bir programlama dilidir."]
+      },
+      "googledrive": {
+        "description": ["File syncing across devices all tied to your Google account.", "Tamamı Google hesabınıza bağlı, cihazlar arası dosya eşitleme."]
+      },
+      "gpuz": {
+        "description": ["GPU-Z provides detailed information about your graphics card and GPU.", "GPU-Z, grafik kartınız ve GPU'nuz hakkında ayrıntılı bilgi sağlar."]
+      },
+      "gsudo": {
+        "description": ["gsudo is a sudo equivalent for Windows. It allows you to run commands with elevated administrative privileges directly within the current console window.", "gsudo, Windows için bir sudo eşdeğeridir. Komutları doğrudan geçerli konsol penceresinde, yükseltilmiş yönetici ayrıcalıklarıyla çalıştırmanızı sağlar."]
+      },
+      "helium": {
+        "description": ["Private, fast, and honest web browser.", "Gizliliğe önem veren, hızlı ve dürüst web tarayıcısı."]
+      },
+      "hugo": {
+        "description": ["The world's fastest framework for building websites.", "Web siteleri oluşturmak için dünyanın en hızlı çerçevesi."]
+      },
+      "handbrake": {
+        "description": ["HandBrake is an open-source video transcoder, allowing you to convert video from nearly any format to a selection of widely supported codecs.", "HandBrake, videoları neredeyse her biçimden yaygın olarak desteklenen bir dizi codec'e dönüştürmenizi sağlayan, açık kaynaklı bir video kod dönüştürücüsüdür."]
+      },
+      "heroiclauncher": {
+        "description": ["Heroic Games Launcher is an open-source alternative game launcher for Epic Games Store.", "Heroic Games Launcher, Epic Games Store için açık kaynaklı, alternatif bir oyun başlatıcısıdır."]
+      },
+      "hwinfo": {
+        "description": ["HWiNFO provides comprehensive hardware information and diagnostics for Windows.", "HWiNFO, Windows için kapsamlı donanım bilgileri ve tanılama sağlar."]
+      },
+      "hwmonitor": {
+        "description": ["HWMonitor is a hardware monitoring program that reads PC systems main health sensors.", "HWMonitor, PC sistemlerinin ana sağlık sensörlerini okuyan bir donanım izleme programıdır."]
+      },
+      "imhex": {
+        "description": ["ImHex is a free and open-source hex editor for reverse engineers and programmers, featuring a custom pattern language for decoding binary formats, a disassembler, and data analysis tools.", "ImHex, tersine mühendislik yapanlar ve programcılar için ücretsiz ve açık kaynaklı bir hex düzenleyicisidir; ikili biçimleri çözümlemek için özel bir desen dili, bir disassembler ve veri analizi araçları sunar."]
+      },
+      "imageglass": {
+        "description": ["ImageGlass is a versatile image viewer with support for various image formats and a focus on simplicity and speed.", "ImageGlass, çeşitli resim biçimlerini destekleyen, sadelik ve hıza odaklanan çok yönlü bir resim görüntüleyicisidir."]
+      },
+      "internetdownloadmanager": {
+        "description": ["Internet Download Manager is a download manager for accelerating, resuming, and scheduling file downloads.", "Internet Download Manager, dosya indirmelerini hızlandırmak, sürdürmek ve zamanlamak için kullanılan bir indirme yöneticisidir."]
+      },
+      "irfanview": {
+        "description": ["IrfanView is a lightweight, fast, and free image viewer and editor. Supports multiple formats, batch processing, and powerful plugins.", "IrfanView; hafif, hızlı ve ücretsiz bir resim görüntüleyicisi ve düzenleyicisidir. Birden çok biçimi, toplu işlemeyi ve güçlü eklentileri destekler."]
+      },
+      "itch": {
+        "description": ["Itch.io is a digital distribution platform for indie games and creative projects.", "Itch.io, bağımsız oyunlar ve yaratıcı projeler için bir dijital dağıtım platformudur."]
+      },
+      "itunes": {
+        "description": ["iTunes is a media player, media library, and online radio broadcaster application developed by Apple Inc.", "iTunes, Apple Inc. tarafından geliştirilen bir medya oynatıcısı, medya kitaplığı ve çevrimiçi radyo yayını uygulamasıdır."]
+      },
+      "java8": {
+        "description": ["Amazon Corretto is a no-cost, multiplatform, production-ready distribution of the Open Java Development Kit (OpenJDK).", "Amazon Corretto, Open Java Development Kit'in (OpenJDK) ücretsiz, çok platformlu ve üretime hazır bir dağıtımıdır."]
+      },
+      "java21": {
+        "description": ["Amazon Corretto is a no-cost, multiplatform, production-ready distribution of the Open Java Development Kit (OpenJDK).", "Amazon Corretto, Open Java Development Kit'in (OpenJDK) ücretsiz, çok platformlu ve üretime hazır bir dağıtımıdır."]
+      },
+      "java25": {
+        "description": ["Amazon Corretto is a no-cost, multiplatform, production-ready distribution of the Open Java Development Kit (OpenJDK).", "Amazon Corretto, Open Java Development Kit'in (OpenJDK) ücretsiz, çok platformlu ve üretime hazır bir dağıtımıdır."]
+      },
+      "jellyfinmediaplayer": {
+        "description": ["Jellyfin Media Player is a client application for the Jellyfin media server, providing access to your media library.", "Jellyfin Media Player, Jellyfin medya sunucusu için medya kitaplığınıza erişim sağlayan bir istemci uygulamasıdır."]
+      },
+      "jellyfinserver": {
+        "description": ["Jellyfin Server is an open-source media server software, allowing you to organize and stream your media library.", "Jellyfin Server, medya kitaplığınızı düzenlemenizi ve akış olarak aktarmanızı sağlayan, açık kaynaklı bir medya sunucusu yazılımıdır."]
+      },
+      "jetbrains": {
+        "description": ["Jetbrains Toolbox is a platform for easy installation and management of JetBrains developer tools.", "Jetbrains Toolbox, JetBrains geliştirici araçlarını kolayca yüklemek ve yönetmek için bir platformdur."]
+      },
+      "jpegview": {
+        "description": ["JPEGView is a lean, fast and highly configurable viewer/editor for JPEG, BMP, PNG, WEBP, TGA, GIF, JXL, HEIC, HEIF, AVIF, and TIFF images with a minimal GUI.", "JPEGView; JPEG, BMP, PNG, WEBP, TGA, GIF, JXL, HEIC, HEIF, AVIF ve TIFF resimleri için minimal bir grafik arabirime sahip, hafif, hızlı ve son derece yapılandırılabilir bir görüntüleyici/düzenleyicidir."]
+      },
+      "joplin": {
+        "description": ["Joplin is an open-source note-taking and to-do application with synchronization capabilities.", "Joplin, eşitleme özelliklerine sahip, açık kaynaklı bir not alma ve yapılacaklar uygulamasıdır."]
+      },
+      "keepassxc": {
+        "description": ["KeePassXC is a modern, secure, and open-source password manager that stores and manages your most sensitive information. You can run KeePassXC on Windows, macOS, and Linux systems. KeePassXC is for people with extremely high demands of secure personal data management. It saves many different types of information, such as usernames, passwords, URLs, attachments, and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions. For easy identification and management, user-defined titles and icons can be specified for entries. In addition, entries are sorted into customizable groups. An integrated search function allows you to use advanced patterns to easily find any entry in your database. A customizable, fast, and easy-to-use password generator utility allows you to create passwords with any combination of characters or easy to remember passphrases.", "KeePassXC, en hassas bilgilerinizi saklayan ve yöneten modern, güvenli ve açık kaynaklı bir parola yöneticisidir; Windows, macOS ve Linux sistemlerinde çalıştırılabilir ve güvenli kişisel veri yönetimi konusunda son derece yüksek beklentileri olan kişilere yöneliktir. Kullanıcı adları, parolalar, URL'ler, ekler ve notlar gibi pek çok farklı türde bilgiyi, özel ve genel bulut çözümleri dahil herhangi bir konumda saklanabilen çevrimdışı ve şifrelenmiş bir dosyaya kaydeder; kolay tanıma ve yönetim için girdilere kullanıcı tanımlı başlıklar ve simgeler atanabilir, girdiler ayrıca özelleştirilebilir gruplara ayrılır. Tümleşik arama işlevi, gelişmiş desenler kullanarak veritabanınızdaki herhangi bir girdiyi kolayca bulmanızı sağlar; özelleştirilebilir, hızlı ve kullanımı kolay parola oluşturma aracı ise istediğiniz karakter birleşimiyle parolalar veya kolay hatırlanan parola cümleleri oluşturmanıza olanak tanır."]
+      },
+      "klite": {
+        "description": ["K-Lite Codec Pack Standard is a collection of audio and video codecs and related tools, providing essential components for media playback.", "K-Lite Codec Pack Standard, medya oynatma için temel bileşenler sağlayan, ses ve video codec'leri ile ilgili araçlardan oluşan bir koleksiyondur."]
+      },
+      "kodi": {
+        "description": ["Kodi is an open-source media center application that allows you to play and view most videos, music, podcasts, and other digital media files.", "Kodi; videoların, müziklerin, podcast'lerin ve diğer dijital medya dosyalarının çoğunu oynatmanızı ve görüntülemenizi sağlayan, açık kaynaklı bir medya merkezi uygulamasıdır."]
+      },
+      "lazygit": {
+        "description": ["Simple terminal UI for git commands.", "Git komutları için basit bir terminal arabirimi."]
+      },
+      "libreoffice": {
+        "description": ["LibreOffice is a powerful and free office suite, compatible with other major office suites.", "LibreOffice, diğer büyük ofis paketleriyle uyumlu, güçlü ve ücretsiz bir ofis paketidir."]
+      },
+      "librewolf": {
+        "description": ["LibreWolf is a privacy-focused web browser based on Firefox, with additional privacy and security enhancements.", "LibreWolf, ek gizlilik ve güvenlik iyileştirmeleri içeren, Firefox tabanlı ve gizlilik odaklı bir web tarayıcısıdır."]
+      },
+      "localsend": {
+        "description": ["An open-source cross-platform alternative to AirDrop.", "AirDrop'a açık kaynaklı ve platformlar arası bir alternatif."]
+      },
+      "mpc-qt": {
+        "description": ["Media Player Classic Qute Theater", "Media Player Classic Qute Theater"]
+      },
+      "mpv": {
+        "description": ["mpv is a free, open source, and cross-platform media player supporting a wide variety of media formats, codecs, and subtitle types.", "mpv; çok çeşitli medya biçimlerini, codec'leri ve altyazı türlerini destekleyen, ücretsiz, açık kaynaklı ve platformlar arası bir medya oynatıcısıdır."]
+      },
+      "matrix": {
+        "description": ["Element is a client for Matrix; an open network for secure, decentralized communication.", "Element, Matrix için bir istemcidir; Matrix, güvenli ve merkezi olmayan iletişim için açık bir ağdır."]
+      },
+      "minitoolpartitionwizard": {
+        "description": ["Comprehensive free partition manager that performs advanced operations Windows natively cannot, such as merging partitions, converting file systems, and organizing disk capacity.", "Bölümleri birleştirme, dosya sistemlerini dönüştürme ve disk kapasitesini düzenleme gibi Windows'un yerleşik olarak yapamadığı gelişmiş işlemleri gerçekleştiren, kapsamlı ve ücretsiz bir bölüm yöneticisi."]
+      },
+      "modrinth": {
+        "description": ["Modrinth App is a desktop application for managing Minecraft mods and modpacks.", "Modrinth App, Minecraft modlarını ve mod paketlerini yönetmek için bir masaüstü uygulamasıdır."]
+      },
+      "moonlight": {
+        "description": ["Moonlight/GameStream Client allows you to stream PC games to other devices over your local network.", "Moonlight/GameStream Client, PC oyunlarını yerel ağınız üzerinden diğer cihazlara akışla aktarmanızı sağlar."]
+      },
+      "mpchc": {
+        "description": ["Media Player Classic - Home Cinema (MPC-HC) is a free and open-source video and audio player for Windows. MPC-HC is based on the original Guliverkli project and contains many additional features and bug fixes.", "Media Player Classic - Home Cinema (MPC-HC), Windows için ücretsiz ve açık kaynaklı bir video ve ses oynatıcısıdır. MPC-HC, orijinal Guliverkli projesini temel alır ve birçok ek özellik ile hata düzeltmesi içerir."]
+      },
+      "msedgeredirect": {
+        "description": ["A Tool to Redirect News, Search, Widgets, Weather, and More to your default browser.", "Haberler, Arama, Pencere öğeleri, Hava Durumu ve daha fazlasını varsayılan tarayıcınıza yönlendiren bir araç."]
+      },
+      "msiafterburner": {
+        "description": ["MSI Afterburner is a graphics card overclocking utility with advanced features.", "MSI Afterburner, gelişmiş özelliklere sahip bir grafik kartı hız aşırtma aracıdır."]
+      },
+      "mullvadvpn": {
+        "description": ["This is the VPN client software for the Mullvad VPN service.", "Bu, Mullvad VPN hizmeti için VPN istemci yazılımıdır."]
+      },
+      "mullvadbrowser": {
+        "description": ["Mullvad Browser is a privacy-focused web browser, developed in partnership with the Tor Project.", "Mullvad Browser, Tor Project ile ortaklaşa geliştirilen, gizlilik odaklı bir web tarayıcısıdır."]
+      },
+      "nanazip": {
+        "description": ["NanaZip is a fast and efficient file compression and decompression tool.", "NanaZip, hızlı ve verimli bir dosya sıkıştırma ve açma aracıdır."]
+      },
+      "netbird": {
+        "description": ["NetBird is an open-source alternative comparable to TailScale that can be connected to a self-hosted server.", "NetBird, TailScale ile karşılaştırılabilir, kendi barındırdığınız bir sunucuya bağlanabilen açık kaynaklı bir alternatiftir."]
+      },
+      "naps2": {
+        "description": ["NAPS2 is a document scanning application that simplifies the process of creating electronic documents.", "NAPS2, elektronik belge oluşturma sürecini kolaylaştıran bir belge tarama uygulamasıdır."]
+      },
+      "neovim": {
+        "description": ["Neovim is a highly extensible text editor and an improvement over the original Vim editor.", "Neovim, son derece genişletilebilir bir metin düzenleyicisidir ve orijinal Vim düzenleyicisinin geliştirilmiş bir sürümüdür."]
+      },
+      "nextclouddesktop": {
+        "description": ["Nextcloud Desktop is the official desktop client for the Nextcloud file synchronization and sharing platform.", "Nextcloud Desktop, Nextcloud dosya eşitleme ve paylaşım platformunun resmi masaüstü istemcisidir."]
+      },
+      "nilesoftShell": {
+        "description": ["Shell is an expanded context menu tool that adds extra functionality and customization options to the Windows context menu.", "Shell, Windows bağlam menüsüne ek işlevler ve özelleştirme seçenekleri ekleyen, genişletilmiş bir bağlam menüsü aracıdır."]
+      },
+      "betterbird": {
+        "description": ["Betterbird is a fork of Mozilla Thunderbird with additional features and bugfixes.", "Betterbird, ek özellikler ve hata düzeltmeleri içeren bir Mozilla Thunderbird türevidir."]
+      },
+      "everything": {
+        "description": ["Everything is a search engine that locates files and folders by filename instantly for Windows. Unlike Windows search Everything initially displays every file and folder on your computer (hence the name Everything). You type in a search filter to limit what files and folders are displayed.", "Everything, Windows için dosya ve klasörleri dosya adına göre anında bulan bir arama motorudur. Windows aramasından farklı olarak Everything, başlangıçta bilgisayarınızdaki tüm dosya ve klasörleri görüntüler (Everything adı da buradan gelir). Görüntülenen dosya ve klasörleri sınırlamak için bir arama filtresi yazarsınız."]
+      },
+      "glazewm": {
+        "description": ["GlazeWM is a tiling window manager for Windows inspired by i3 and Polybar.", "GlazeWM, i3 ve Polybar'dan esinlenen, Windows için döşemeli bir pencere yöneticisidir."]
+      },
+      "deskflow": {
+        "description": ["Deskflow is a free and open-source software KVM that lets you share a single keyboard and mouse across multiple computers.", "Deskflow, tek bir klavye ve fareyi birden çok bilgisayar arasında paylaşmanızı sağlayan, ücretsiz ve açık kaynaklı, yazılım tabanlı bir KVM'dir."]
+      },
+      "Lua": {
+        "description": ["A 'batteries included environment' for the Lua scripting language on Windows.", "Windows'ta Lua betik dili için 'her şey dahil bir ortam'."]
+      },
+      "CloudflareWARP": {
+        "description": ["WARP is a freemium VPN service provided by Cloudflare. Includes usage of Cloudflare's DNS", "WARP, Cloudflare tarafından sağlanan, temel sürümü ücretsiz bir VPN hizmetidir. Cloudflare'in DNS hizmetinin kullanımını içerir"]
+      }
+    }
+  }
+}
