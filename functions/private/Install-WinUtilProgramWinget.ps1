@@ -237,7 +237,7 @@ Function Install-WinUtilProgramWinget {
 
         $arguments = switch ($Action) {
             "Uninstall" {
-                @("uninstall", "--id", $program, "--source", $source, "--silent", "--disable-interactivity")
+                @("uninstall", "--id", $program, "--accept-source-agreements", "--source", $source, "--silent", "--disable-interactivity")
             }
             "Upgrade" {
                 if ($upgradeAll) {
