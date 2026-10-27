@@ -116,6 +116,7 @@ if ($Preset -or $Config) {
 # thread failed with. Work started from the interface goes to the worker pool through
 # Start-WinUtilJob, so neither the window nor this thread is ever blocked by it.
 
+$inputXML = Initialize-WinUtilLanguage -Xaml $inputXML -Language $Language
 $sync.UIRunspace = [runspacefactory]::CreateRunspace($Host, (New-WinUtilSessionState))
 $sync.UIRunspace.ApartmentState = "STA"
 $sync.UIRunspace.ThreadOptions = "ReuseThread"
