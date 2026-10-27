@@ -26,11 +26,13 @@ WinUtil is a Windows PowerShell utility with a WPF interface. The repository is 
 - `functions/public/`: public/UI-facing PowerShell functions.
 - `functions/private/`: internal helper PowerShell functions.
 - `config/`: JSON configuration consumed at compile time and embedded into `$sync.configs`.
+- `lang/`: interface translations (`tr.*.json`), embedded into `$sync.configs.translations` at compile time.
 - `xaml/inputXML.xaml`: WPF UI markup embedded into the compiled script.
 - `tools/autounattend.xml`: unattended setup XML embedded for Windows ISO workflows.
 - `pester/`: Pester tests for config and function checks.
 - `lint/PSScriptAnalyser.ps1`: PowerShell Script Analyzer settings.
 - `tools/title-screen/`: uv project that captures WinUtil's Light and Dark themes and generates the title-screen composite.
+- `tools/Test-WinUtilTranslation.ps1`: checks `lang/*.json` against the current English sources and reports coverage.
 - `docs/`: Astro + Starlight documentation site, with its own `package.json` and build independent of `Compile.ps1`.
 - `winutil.ps1`: ignored generated build artifact.
 
@@ -57,10 +59,11 @@ WinUtil is a Windows PowerShell utility with a WPF interface. The repository is 
 2. Append every file under `functions/` recursively.
 3. Convert each `config/*.json` file into embedded `$sync.configs` objects.
 4. Special-case `config/applications.json` so keys receive the `WPFInstall` prefix in compiled config.
-5. Embed `xaml/inputXML.xaml` into `$inputXML`.
-6. Embed `tools/autounattend.xml` into `$WinUtilAutounattendXml`.
-7. Append `scripts/main.ps1`.
-8. Write the result to root `winutil.ps1`.
+5. Embed each `lang/*.json` file, in name order, as an ASCII-escaped JSON block in `$sync.configs.translations`.
+6. Embed `xaml/inputXML.xaml` into `$inputXML`.
+7. Embed `tools/autounattend.xml` into `$WinUtilAutounattendXml`.
+8. Append `scripts/main.ps1`.
+9. Write the result to root `winutil.ps1`.
 
 Because the final script is concatenated, code cannot rely on runtime module imports or source-relative dot-sourcing unless the compiled script will also contain the required code/data.
 
@@ -71,6 +74,7 @@ Because the final script is concatenated, code cannot rely on runtime module imp
 - Long-running operations use runspaces or existing async patterns so the UI remains responsive.
 - UI updates from background work are dispatched back to the WPF UI thread.
 - Declarative features such as apps, tweaks, presets, DNS providers, and navigation stay in `config/*.json` unless code is required.
+- Before the interface starts, `Initialize-WinUtilLanguage` picks the language (`-Language`, then `$env:WINUTIL_LANG`, then Turkish), rewrites translated config text in place and translates the XAML. Text built at run time goes through `Get-WinUtilText`. English loads no table, and headless `-Preset` and `-Config` runs stay English.
 
 ## UI And Event Contract
 

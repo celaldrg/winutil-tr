@@ -31,7 +31,7 @@ $env:WINUTIL_LANG = 'en'; irm https://github.com/celaldrg/winutil-tr/releases/la
 ```
 
 - **Çeviriler:** [`lang/`](lang/) klasöründe, düz JSON çiftleri olarak durur. Düzeltme önerilerinizi bekliyoruz.
-- **İngilizce kalanlar:** Kayıt (log) dosyaları ve `-Preset` ya da `-Config` ile arayüzsüz yapılan çalıştırmalar İngilizcedir.
+- **İngilizce kalanlar:** Kayıt (log) iletileri İngilizcedir, ancak içlerinde geçen uygulama ve ince ayar metinleri arayüz dilinde olabilir. `-Preset` ya da `-Config` ile arayüzsüz yapılan çalıştırmalar İngilizcedir.
 - **Sorun bildirme:** Türkçe sürümle ilgili sorunları [bu depoya](https://github.com/celaldrg/winutil-tr/issues), WinUtil'in kendisiyle ilgili sorunları [ana projeye](https://github.com/ChrisTitusTech/winutil/issues) bildirin.
 - **Lisans:** Bu sürüm, MIT lisanslı ChrisTitusTech/winutil üzerine kuruludur. Chris Titus Tech ile bir bağı yoktur ve onun onayını taşımaz.
 
@@ -89,7 +89,7 @@ To view exactly what each preset does, see [config/preset.json](config/preset.js
 The translations are plain JSON pairs in [`lang/`](lang/).
 - The compiled script embeds them as ASCII.
 - When a translation is missing or no longer matches the English source, WinUtil shows the original English text.
-- Logs, and headless `-Preset` or `-Config` runs, stay in English.
+- Log messages stay in English, though app and tweak text they quote can appear in the interface language. Headless `-Preset` or `-Config` runs stay in English.
 - After an upstream sync, `tools/Test-WinUtilTranslation.ps1 -Strict` reports missing, stale and conflicting translations.
 
 ---
