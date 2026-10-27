@@ -72,6 +72,20 @@ BeforeAll {
         "icacls $system32Path\wuaueng.dll /setowner NT SERVICE\TrustedInstaller",
         "icacls $system32Path\wuaueng.dll /remove *S-1-1-0"
     )
+
+    # When the rename fails, the backup goes back to TrustedInstaller without the Everyone grant
+    $script:updateDllRollbackCalls = @(
+        "takeown /f $system32Path\WaaSMedicSvc_BAK.dll",
+        "icacls $system32Path\WaaSMedicSvc_BAK.dll /grant *S-1-1-0:F",
+        "rename $system32Path\WaaSMedicSvc_BAK.dll WaaSMedicSvc.dll",
+        "icacls $system32Path\WaaSMedicSvc_BAK.dll /setowner NT SERVICE\TrustedInstaller",
+        "icacls $system32Path\WaaSMedicSvc_BAK.dll /remove *S-1-1-0",
+        "takeown /f $system32Path\wuaueng_BAK.dll",
+        "icacls $system32Path\wuaueng_BAK.dll /grant *S-1-1-0:F",
+        "rename $system32Path\wuaueng_BAK.dll wuaueng.dll",
+        "icacls $system32Path\wuaueng_BAK.dll /setowner NT SERVICE\TrustedInstaller",
+        "icacls $system32Path\wuaueng_BAK.dll /remove *S-1-1-0"
+    )
 }
 
 Describe "Invoke-WPFUpdatesdisable" {
@@ -341,6 +355,24 @@ Describe "Invoke-WPFUpdatesdefault" {
         Should -Not -Invoke takeown
         Should -Not -Invoke icacls
         Should -Not -Invoke Rename-Item
+    }
+
+    It "returns a backup it could not rename to TrustedInstaller and continues" {
+        Mock Test-Path { $true } -ParameterFilter { $LiteralPath -clike "*_BAK.dll" }
+        Mock Rename-Item {
+            $script:dllCalls.Add("rename $LiteralPath $NewName")
+            throw "locked"
+        }
+
+        Invoke-WPFUpdatesdefault
+
+        $script:dllCalls.ToArray() | Should -BeExactly $script:updateDllRollbackCalls
+        Should -Invoke -CommandName Write-WinUtilLog -Times 2 -Exactly -ParameterFilter {
+            $Level -ceq "ERROR"
+        }
+        Should -Invoke -CommandName Set-Service -Times 1 -Exactly -ParameterFilter {
+            $Name -ceq "BITS" -and $StartupType -ceq "Manual"
+        }
     }
 }
 

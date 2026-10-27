@@ -14,6 +14,8 @@ function Restore-WinUtilUpdateDll {
     #>
 
     foreach ($name in @("WaaSMedicSvc", "wuaueng")) {
+        $tookOwnership = $false
+        $renamed = $false
         try {
             $dll = Join-Path $Env:SystemRoot "System32\$name.dll"
             $bak = Join-Path $Env:SystemRoot "System32\${name}_BAK.dll"
@@ -21,11 +23,13 @@ function Restore-WinUtilUpdateDll {
             if ((Test-Path -LiteralPath $bak) -and -not (Test-Path -LiteralPath $dll)) {
                 takeown /f $bak | Out-Null
                 if ($LASTEXITCODE -ne 0) { throw "takeown failed with exit code $LASTEXITCODE." }
+                $tookOwnership = $true
 
                 icacls $bak /grant "*S-1-1-0:F" | Out-Null
                 if ($LASTEXITCODE -ne 0) { throw "icacls /grant failed with exit code $LASTEXITCODE." }
 
                 Rename-Item -LiteralPath $bak -NewName "$name.dll" -ErrorAction Stop
+                $renamed = $true
 
                 # Run both even if the owner change fails, so the Everyone grant is not left behind
                 icacls $dll /setowner "NT SERVICE\TrustedInstaller" | Out-Null
@@ -39,8 +43,25 @@ function Restore-WinUtilUpdateDll {
                 Write-WinUtilLog -Component "Updates" -Message "Restored $name.dll from ${name}_BAK.dll."
             }
         } catch {
-            Write-Host "Unable to restore $name.dll: $($_.Exception.Message)" -ForegroundColor Yellow
-            Write-WinUtilLog -Level "ERROR" -Component "Updates" -Message "Unable to restore $name.dll from ${name}_BAK.dll: $($_.Exception.Message)"
+            $message = $_.Exception.Message
+
+            # A backup that was not renamed goes back to TrustedInstaller without the Everyone grant,
+            # or any user could replace the DLL that the next restore puts in place
+            if ($tookOwnership -and -not $renamed -and (Test-Path -LiteralPath $bak)) {
+                try {
+                    icacls $bak /setowner "NT SERVICE\TrustedInstaller" | Out-Null
+                    $setOwnerExitCode = $LASTEXITCODE
+                    icacls $bak /remove "*S-1-1-0" | Out-Null
+                    if ($setOwnerExitCode -ne 0 -or $LASTEXITCODE -ne 0) {
+                        $message += " icacls could not reset the permissions of ${name}_BAK.dll (exit codes $setOwnerExitCode and $LASTEXITCODE)."
+                    }
+                } catch {
+                    $message += " icacls could not reset the permissions of ${name}_BAK.dll: $($_.Exception.Message)"
+                }
+            }
+
+            Write-Host "Unable to restore $name.dll: $message" -ForegroundColor Yellow
+            Write-WinUtilLog -Level "ERROR" -Component "Updates" -Message "Unable to restore $name.dll from ${name}_BAK.dll: $message"
         }
     }
 }
