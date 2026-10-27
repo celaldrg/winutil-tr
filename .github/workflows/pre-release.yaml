@@ -1,4 +1,4 @@
-name: Pre-Release WinUtil
+name: Release WinUtil TR
 
 permissions:
   contents: write
@@ -19,42 +19,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v7
 
-      - name: Generate Dev Docs and Update JSON Links
-        shell: pwsh
-        run: |
-          Set-Location tools
-          ./devdocs-generator.ps1
-
       - name: Compile project
         shell: pwsh
         run: |
           Set-ExecutionPolicy Bypass -Scope Process -Force; ./Compile.ps1
         continue-on-error: false # Directly fail the job on error, removing the need for a separate check
-
-      - name: Create Pull Request for Updated Docs and JSON Links
-        id: cpr
-        uses: peter-evans/create-pull-request@v8
-        with:
-          token: ${{ secrets.AUTO_MERGE }}
-          commit-message: 'chore: Update generated dev docs and JSON links'
-          title: 'chore: Update generated dev docs and JSON links'
-          body: 'Automated update of generated documentation and JSON config links from pre-release build'
-          branch: docs-update
-          delete-branch: true
-          add-paths: |
-            docs/src/content/docs/code-reference/
-            config/tweaks.json
-            config/feature.json
-          labels: |
-            automated
-            documentation
-            skip-changelog
-
-      - name: Check outputs
-        shell: bash
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
       - name: Set Version to Todays Date
         id: extract_version
@@ -131,13 +100,14 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ env.VERSION }}
-          name: Pre-Release ${{ env.VERSION }}
+          name: WinUtil TR ${{ env.VERSION }}
           body: |
             ${{ steps.filter_notes.outputs.body }}
 
             ![GitHub Downloads (specific asset, specific tag)](https://img.shields.io/github/downloads/celaldrg/winutil-tr/${{ env.VERSION }}/winutil.ps1)
           append_body: false
           files: ./winutil.ps1
-          prerelease: true
+          prerelease: false
+          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
