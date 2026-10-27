@@ -38,7 +38,7 @@ Describe "Exported configuration clipboard command" {
 
         $result | Should -Be $configPath
         Should -Invoke Invoke-RestMethod -Times 1 -Exactly -ParameterFilter {
-            $Uri -eq 'https://christitus.com/win'
+            $Uri -eq 'https://github.com/celaldrg/winutil-tr/releases/latest/download/winutil.ps1'
         }
     }
 }
