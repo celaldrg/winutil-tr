@@ -170,7 +170,7 @@ Describe "Install-WinUtilProgramWinget" {
 
         Should -Invoke -CommandName Start-Process -Times 1 -Exactly -ParameterFilter {
             $FilePath -eq "winget" -and
-                (@($ArgumentList) -join "|") -eq "uninstall|--id|9NBLGGH4NNS1|--source|msstore|--silent|--disable-interactivity"
+                (@($ArgumentList) -join "|") -eq "uninstall|--id|9NBLGGH4NNS1|--accept-source-agreements|--source|msstore|--silent|--disable-interactivity"
         }
     }
 
