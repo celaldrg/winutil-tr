@@ -34,6 +34,8 @@ function Invoke-WPFUpdatessecurity {
         Remove-ItemProperty -Path $automaticUpdatePolicyPath -Name "UseWUServer" -ErrorAction SilentlyContinue
     }
 
+    Restore-WinUtilUpdateDll
+
     Set-Service -Name BITS -StartupType Manual
     Set-Service -Name wuauserv -StartupType Manual
     Set-Service -Name UsoSvc -StartupType Automatic
