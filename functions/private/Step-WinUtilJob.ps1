@@ -49,6 +49,8 @@ function Step-WinUtilJob {
         return
     }
 
+    if ($null -ne $sync.configs.uitext) { $Status = Get-WinUtilText $Status }
+
     Invoke-WPFUIThread -Async -Parameters @{
         Status = $Status
         Percent = [Math]::Min([Math]::Max($Percent, -1), 100)

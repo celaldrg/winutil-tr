@@ -88,6 +88,8 @@ function Set-WinUtilISOStep {
         [switch]$Reverse
     )
 
+    if ($null -ne $sync.configs.uitext) { $Label = Get-WinUtilText $Label }
+
     Invoke-WPFUIThread -Parameters @{ Step = $Step; Label = $Label; Reverse = [bool]$Reverse } -ScriptBlock {
         param($Step, $Label, $Reverse)
 
@@ -165,17 +167,19 @@ function Invoke-WinUtilISOBrowse {
     Add-Type -AssemblyName System.Windows.Forms
 
     $dlg = [System.Windows.Forms.OpenFileDialog]::new()
-    $dlg.Title            = "Select Windows 11 ISO"
-    $dlg.Filter           = "ISO files (*.iso)|*.iso|All files (*.*)|*.*"
+    $dlg.Title            = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText "Select Windows 11 ISO" } else { "Select Windows 11 ISO" })
+    $dlg.Filter           = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText "ISO files (*.iso)|*.iso|All files (*.*)|*.*" } else { "ISO files (*.iso)|*.iso|All files (*.*)|*.*" })
     $dlg.InitialDirectory = [System.Environment]::GetFolderPath("Desktop")
 
     if ($dlg.ShowDialog() -ne [System.Windows.Forms.DialogResult]::OK) { return }
 
     $isoPath    = $dlg.FileName
     $fileSizeGB = [math]::Round((Get-Item $isoPath).Length / 1GB, 2)
+    $fileInfo   = "File size: $fileSizeGB GB"
+    if ($null -ne $sync.configs.uitext) { $fileInfo = Get-WinUtilText $fileInfo }
 
     $sync["WPFWin11ISOPath"].Text           = $isoPath
-    $sync["WPFWin11ISOFileInfo"].Text       = "File size: $fileSizeGB GB"
+    $sync["WPFWin11ISOFileInfo"].Text       = $fileInfo
     $sync["WPFWin11ISOFileInfo"].Visibility = "Visible"
     $sync["WPFWin11ISOVerifyResultPanel"].Visibility  = "Collapsed"
 
@@ -187,7 +191,7 @@ function Invoke-WinUtilISOBrowse {
 function Invoke-WinUtilISOMountAndVerify {
     $isoPath = $sync["WPFWin11ISOPath"].Text
 
-    if ([string]::IsNullOrWhiteSpace($isoPath) -or $isoPath -eq "No ISO selected...") {
+    if ([string]::IsNullOrWhiteSpace($isoPath) -or $isoPath -eq $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'No ISO selected...' } else { 'No ISO selected...' })) {
         Show-WinUtilMessage -Message "Please select an ISO file first." -Title "No ISO Selected" -Button "OK" -Icon "Warning" | Out-Null
         return
     }
@@ -637,7 +641,7 @@ function Invoke-WinUtilISOCleanAndReset {
             $sync["Win11ISOUSBDisks"]    = $null
 
             Invoke-WPFUIThread -ScriptBlock {
-                $sync["WPFWin11ISOPath"].Text                    = "No ISO selected..."
+                $sync["WPFWin11ISOPath"].Text                    = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'No ISO selected...' } else { 'No ISO selected...' })
                 $sync["WPFWin11ISOFileInfo"].Visibility          = "Hidden"
                 $sync["WPFWin11ISOVerifyResultPanel"].Visibility = "Collapsed"
                 $sync["WPFWin11ISOOptionUSB"].Visibility         = "Collapsed"
@@ -670,8 +674,8 @@ function Invoke-WinUtilISOExport {
     Add-Type -AssemblyName System.Windows.Forms
 
     $dlg = [System.Windows.Forms.SaveFileDialog]::new()
-    $dlg.Title            = "Save Modified Windows 11 ISO"
-    $dlg.Filter           = "ISO files (*.iso)|*.iso"
+    $dlg.Title            = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText "Save Modified Windows 11 ISO" } else { "Save Modified Windows 11 ISO" })
+    $dlg.Filter           = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText "ISO files (*.iso)|*.iso" } else { "ISO files (*.iso)|*.iso" })
     $dlg.FileName         = "Win11_Modified_$(Get-Date -Format 'yyyyMMdd').iso"
     $dlg.InitialDirectory = [System.Environment]::GetFolderPath("Desktop")
 
@@ -751,7 +755,10 @@ function Invoke-WinUtilISOExport {
             Invoke-WPFUIThread -Parameters @{ OutputISO = $outputISO } -ScriptBlock {
                 param($OutputISO)
 
-                $sync["WPFWin11ISODoneLabel"].Text        = "ISO saved to $OutputISO"
+                $doneText = "ISO saved to $OutputISO"
+                if ($null -ne $sync.configs.uitext) { $doneText = Get-WinUtilText $doneText }
+
+                $sync["WPFWin11ISODoneLabel"].Text        = $doneText
                 $sync["WPFWin11ISODonePanel"].Visibility  = "Visible"
             }
             Set-WinUtilISOStep -Step "Output"

@@ -17,9 +17,12 @@ function Get-WinUtilEntryToolTip {
         [string]$Key
     )
 
+    $keyLabel = "Preset key: "
+    if ($null -ne $sync.configs.uitext) { $keyLabel = Get-WinUtilText $keyLabel }
+
     if ([string]::IsNullOrWhiteSpace($Description)) {
-        return "Preset key: $Key"
+        return "$keyLabel$Key"
     }
 
-    return "$Description`n`nPreset key: $Key"
+    return "$Description`n`n$keyLabel$Key"
 }

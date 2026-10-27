@@ -46,7 +46,9 @@ function Initialize-InstallCategoryAppList {
 
             # Add category label to container
             $toggleButton = New-Object Windows.Controls.Label
-            $toggleButton.Content = "- $Category"
+            $categoryDisplayName = $Category
+            if ($null -ne $sync.configs.uitext) { $categoryDisplayName = Get-WinUtilText $categoryDisplayName }
+            $toggleButton.Content = "- $categoryDisplayName"
             $toggleButton.Tag = "CategoryToggleButton"
             $toggleButton.SetResourceReference([Windows.Controls.Control]::FontSizeProperty, "HeaderFontSize")
             $toggleButton.SetResourceReference([Windows.Controls.Control]::FontFamilyProperty, "HeaderFontFamily")

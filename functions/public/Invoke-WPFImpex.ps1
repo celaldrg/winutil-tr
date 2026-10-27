@@ -33,7 +33,7 @@ function Invoke-WPFImpex {
                 "import" { $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog }
             }
             $FileBrowser.InitialDirectory = [Environment]::GetFolderPath('Desktop')
-            $FileBrowser.Filter = "JSON Files (*.json)|*.json"
+            $FileBrowser.Filter = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'JSON Files (*.json)|*.json' } else { 'JSON Files (*.json)|*.json' })
             $FileBrowser.ShowDialog() | Out-Null
 
             if ($FileBrowser.FileName -eq "") {

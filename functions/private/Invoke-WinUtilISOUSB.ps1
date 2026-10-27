@@ -5,7 +5,7 @@ function Invoke-WinUtilISORefreshUSBDrives {
     $combo.Items.Clear()
 
     if ($removable.Count -eq 0) {
-        $combo.Items.Add("No USB drives detected.")
+        $combo.Items.Add($(if ($null -ne $sync.configs.uitext) { Get-WinUtilText "No USB drives detected." } else { "No USB drives detected." }))
         $combo.SelectedIndex = 0
         $sync["Win11ISOUSBDisks"] = @()
         Write-WinUtilISOLog "No USB drives detected."
@@ -237,7 +237,10 @@ function Invoke-WinUtilISOWriteUSB {
             Invoke-WPFUIThread -Parameters @{ DiskNumber = $DiskNumber } -ScriptBlock {
                 param($DiskNumber)
 
-                $sync["WPFWin11ISODoneLabel"].Text = "Disk $DiskNumber is ready to boot from."
+                $doneText = "Disk $DiskNumber is ready to boot from."
+                if ($null -ne $sync.configs.uitext) { $doneText = Get-WinUtilText $doneText }
+
+                $sync["WPFWin11ISODoneLabel"].Text = $doneText
                 $sync["WPFWin11ISODonePanel"].Visibility = "Visible"
             }
             Set-WinUtilISOStep -Step "Output"
