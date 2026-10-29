@@ -47,7 +47,7 @@ function New-WinUtilFossBadge {
     $badge.Width = $Size
     $badge.Height = $Size
     $badge.Child = $artwork
-    $badge.ToolTip = "Free and Open Source Software"
+    $badge.ToolTip = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'Free and Open Source Software' } else { 'Free and Open Source Software' })
 
     return $badge
 }

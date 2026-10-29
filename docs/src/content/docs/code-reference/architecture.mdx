@@ -59,6 +59,7 @@ winutil/
 │   ├── tweaks.json           # Tweak definitions
 │   ├── feature.json          # Windows feature definitions
 │   └── preset.json           # Preset configurations
+├── lang/                      # Interface translations (tr.*.json)
 ├── xaml/
 │   └── inputXML.xaml         # GUI layout definition
 └── docs/                     # Documentation
@@ -72,9 +73,10 @@ winutil/
 **Process**:
 1. Reads all function files from `/functions/`
 2. Includes configuration JSON files
-3. Embeds XAML GUI definition
-4. Combines into a single script
-5. Outputs `winutil.ps1`
+3. Embeds the `lang/*.json` translations as ASCII-escaped JSON
+4. Embeds XAML GUI definition
+5. Combines into a single script
+6. Outputs `winutil.ps1`
 
 **Why**: Makes distribution easier (single file) and improves load time.
 

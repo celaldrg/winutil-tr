@@ -10,6 +10,7 @@ param (
     [string]$Config,
     [ValidateSet("Standard", "Minimal", "Advanced", "")]
     [string]$Preset,
+    [string]$Language,
     [switch]$Offline
 )
 
@@ -186,6 +187,11 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
         } else {
             $parameter.Value
         }
+    }
+
+    # An elevated process starts with a fresh environment, so WINUTIL_LANG travels as a parameter
+    if ([string]::IsNullOrWhiteSpace($Language) -and $env:WINUTIL_LANG) {
+        $elevationParameters["Language"] = $env:WINUTIL_LANG
     }
 
     $powershellCmd = if (Get-Command pwsh -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell" }

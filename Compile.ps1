@@ -33,6 +33,13 @@ Get-ChildItem config | ForEach-Object {
     $script += "`$sync.configs.$($_.BaseName) = @'`r`n$json`r`n'@ | ConvertFrom-Json"
 }
 
+$script += "`$sync.configs.translations = @{}"
+Get-ChildItem lang -Filter *.json -File -ErrorAction SilentlyContinue | Sort-Object Name | ForEach-Object {
+    $json = Get-Content -Path $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json | ConvertTo-Json -Depth 10 -Compress
+    $json = [regex]::Replace($json, '[^\x00-\x7F]', { param($m) '\u{0:x4}' -f [int][char]$m.Value })
+    $script += "`$sync.configs.translations['$($_.BaseName)'] = @'`r`n$json`r`n'@ | ConvertFrom-Json"
+}
+
 $xaml = Get-Content -Path xaml\inputXML.xaml -Raw
 $script += "`$inputXML = @'`r`n$xaml`r`n'@"
 

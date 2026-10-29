@@ -28,6 +28,9 @@ function Show-WinUtilMessage {
         return $unattended
     }
 
+    if ($null -ne $sync.configs.uitext) { $Message = Get-WinUtilText $Message }
+    if ($null -ne $sync.configs.uitext) { $Title = Get-WinUtilText $Title }
+
     return Invoke-WPFUIThread -PassThru -Parameters @{
         Message = $Message
         Title = $Title

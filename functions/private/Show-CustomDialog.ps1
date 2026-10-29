@@ -262,7 +262,7 @@ function Show-CustomDialog {
 
     # Add OK button
     $okButton = New-Object Windows.Controls.Button
-    $okButton.Content = "OK"
+    $okButton.Content = $(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'OK' } else { 'OK' })
     $okButton.FontSize = $FontSize
     $okButton.Width = 80
     $okButton.Height = 30

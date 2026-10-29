@@ -76,6 +76,7 @@ function Initialize-WPFUI {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
                             $this.ToolTip = "Install or Upgrade $($appObject.content)"
+                            if ($null -ne $sync.configs.uitext) { $this.ToolTip = Get-WinUtilText $this.ToolTip }
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -86,6 +87,7 @@ function Initialize-WPFUI {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
                             $this.ToolTip = "Uninstall $($appObject.content)"
+                            if ($null -ne $sync.configs.uitext) { $this.ToolTip = Get-WinUtilText $this.ToolTip }
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -95,7 +97,7 @@ function Initialize-WPFUI {
                     "Info" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = "Open the application's website in your default browser`n$($appObject.link)"
+                            $this.ToolTip = "$(if ($null -ne $sync.configs.uitext) { Get-WinUtilText 'Open the application''s website in your default browser' } else { 'Open the application''s website in your default browser' })`n$($appObject.link)"
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)

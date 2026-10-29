@@ -138,6 +138,10 @@ function Find-TweaksByNameOrDescription {
             $searchTerm = ""
         }
 
+        # Get-WinUtilEntryToolTip translates the "Preset key: " label the same way
+        $presetKeyLabel = "Preset key: "
+        if ($null -ne $sync.configs.uitext) { $presetKeyLabel = Get-WinUtilText $presetKeyLabel }
+
         # Iterate through all categories
         $tweaksPanel.Children | ForEach-Object {
             $categoryBorder = $_
@@ -256,7 +260,7 @@ function Find-TweaksByNameOrDescription {
                                     $checkboxToolTipStr = [string]$checkboxToolTip
 
                                     # Match the preset key but not the "Preset key: " label added by Get-WinUtilEntryToolTip
-                                    $checkboxToolTipStr = $checkboxToolTipStr.Replace("Preset key: ", "")
+                                    $checkboxToolTipStr = $checkboxToolTipStr.Replace($presetKeyLabel, "")
 
                                     # Use IndexOf for literal matching (no wildcard interpretation)
                                     $contentMatch = $checkboxContentStr.IndexOf($searchTerm, [System.StringComparison]::OrdinalIgnoreCase) -ge 0
